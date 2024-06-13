@@ -20,7 +20,7 @@ export default function RootLayout({
       <body
         className={
           inter.className +
-          'scrollbar-hide min-h-screen w-screen overflow-x-hidden bg-background text-foreground antialiased overflow-auto'
+          'scrollbar-hide min-h-screen w-full max-w-screen overflow-x-hidden bg-background text-foreground antialiased overflow-auto'
         }
       >
         <ThemeProvider
