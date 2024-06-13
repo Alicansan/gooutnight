@@ -17,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body
+        className={
+          inter.className +
+          'scrollbar-hide min-h-screen w-screen overflow-x-hidden bg-background text-foreground antialiased overflow-auto'
+        }
+      >
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
