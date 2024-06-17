@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { SparklesCore } from "../ui/sparkles";
+import { SparklesCore } from "../../components/ui/sparkles";
 
 export function AboutUsCreateYourNiteSection() {
   return (
-    <div className="h-[20rem] bg-black w-screen mt-24 flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[20rem] bg-slate-950 w-screen mt-24 flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="md:text-5xl text-xl lg:text-7xl font-bold text-center text-white relative z-20">
         Create Your Nite
       </h1>
@@ -26,7 +26,7 @@ export function AboutUsCreateYourNiteSection() {
         />
 
         {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+        <div className="absolute inset-0 w-full h-full bg-slate-950 [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
-import { AboutUsTextSection } from "./AboutUsTextSection";
-import { AboutUsOurTeamSection } from "./AboutUsOurTeamSection";
-import { AboutUsCreateYourNiteSection } from "./AboutUsCreateYourNiteSection";
+import { AboutUsTextSection } from "@/app/AboutUs/AboutUsTextSection";
+import { AboutUsOurTeamSection } from "@/app/AboutUs/AboutUsOurTeamSection";
+import { AboutUsCreateYourNiteSection } from "@/app/AboutUs/AboutUsCreateYourNiteSection";
 
-export function AboutUsSection() {
+const AboutUs: FunctionComponent = () => {
   return (
     <LampContainer>
       <motion.h1
@@ -17,7 +17,7 @@ export function AboutUsSection() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+        className="bg-gradient-to-br from-slate-200 to-slate-600 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
         ABOUT US
       </motion.h1>
@@ -26,4 +26,5 @@ export function AboutUsSection() {
       <AboutUsCreateYourNiteSection />
     </LampContainer>
   );
-}
+};
+export default AboutUs;

@@ -12,8 +12,8 @@ const content = [
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         <Image
           src="/team1.png"
-          width={300}
-          height={300}
+          width={600}
+          height={600}
           className="h-full w-full object-cover"
           alt="Our Team Photo"
         />
@@ -28,8 +28,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/team2.png"
-          width={300}
-          height={300}
+          width={600}
+          height={600}
           className="h-full w-full object-cover"
           alt="Rohit Murthy Photo"
         />
@@ -44,8 +44,8 @@ const content = [
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
         <Image
           src="/team3.png"
-          width={300}
-          height={300}
+          width={600}
+          height={600}
           className="h-full w-full object-cover"
           alt="Melvin Price Photo"
         />
@@ -60,8 +60,8 @@ const content = [
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         <Image
           src="/team4.png"
-          width={300}
-          height={300}
+          width={600}
+          height={600}
           className="h-full w-full object-cover"
           alt="Sarah Gulati Photo"
         />

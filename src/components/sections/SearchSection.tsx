@@ -53,14 +53,14 @@ const DimLight = ({ side, children }: DimLightProps) => {
       <div className="absolute left-1/2 -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-white to-transparent h-[5px] w-1/4 blur-sm" />
 
       {/* Core component */}
-      {/* <SparklesCore
+      <SparklesCore
         background="transparent"
         minSize={0.4}
         maxSize={1}
         particleDensity={400}
         className="w-full h-full"
         particleColor="#FFFFFF"
-      /> */}
+      />
 
       {/* Radial Gradient to prevent sharp edges */}
       <div className="absolute inset-0 w-full mt-4 h-full bg-background [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
