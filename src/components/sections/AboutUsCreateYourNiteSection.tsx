@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { SparklesCore } from "@/components/ui/sparkles";
+import { SparklesCore } from "../ui/sparkles";
 
 export function AboutUsCreateYourNiteSection() {
   return (
@@ -20,7 +20,7 @@ export function AboutUsCreateYourNiteSection() {
           background="transparent"
           minSize={0.4}
           maxSize={1}
-          particleDensity={1200}
+          particleDensity={400}
           className="w-full h-full"
           particleColor="#FFFFFF"
         />

@@ -7,11 +7,11 @@ const content = [
   {
     title: "Our Team",
     description:
-      "This is our team This is our team This is our team This is our team This is our team This is our team This is our team This is our team This is our team This is our team This is our team This is our team This is our team This is our team This is our team This is our team.",
+      "As the NiteLifeNav team, we are committed to transforming the nightlife experience. Our CEO and Founder, Melvin Price, with over 15 years of global nightlife experience, understands the needs of our customers. Our COO, Rohit Murthy, strengthens our internal structure with his expertise in corporate strategy and lean methodology. Our In-House General Counsel, Sarah Gulati, ensures smooth legal transactions with her experience in business contracts and international law. Together, we strive to provide accurate and real-time information to enhance your nightlife experience.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         <Image
-          src="/linear.webp"
+          src="/team1.png"
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -27,7 +27,7 @@ const content = [
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
-          src="/linear.webp"
+          src="/team2.png"
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -43,7 +43,7 @@ const content = [
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
         <Image
-          src="/linear.webp"
+          src="/team3.png"
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -59,7 +59,7 @@ const content = [
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         <Image
-          src="/linear.webp"
+          src="/team4.png"
           width={300}
           height={300}
           className="h-full w-full object-cover"
