@@ -2,11 +2,11 @@
 import React, { FunctionComponent } from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
-import { AboutUsTextSection } from "@/app/AboutUs/AboutUsTextSection";
-import { AboutUsOurTeamSection } from "@/app/AboutUs/AboutUsOurTeamSection";
-import { AboutUsCreateYourNiteSection } from "@/app/AboutUs/AboutUsCreateYourNiteSection";
+import { AboutUsTextSection } from "@/app/AboutUsPage/AboutUsTextSection";
+import { AboutUsOurTeamSection } from "@/app/AboutUsPage/AboutUsOurTeamSection";
+import { AboutUsCreateYourNiteSection } from "@/app/AboutUsPage/AboutUsCreateYourNiteSection";
 
-const AboutUs: FunctionComponent = () => {
+const AboutUsPage: FunctionComponent = () => {
   return (
     <LampContainer>
       <motion.h1
@@ -27,4 +27,4 @@ const AboutUs: FunctionComponent = () => {
     </LampContainer>
   );
 };
-export default AboutUs;
+export default AboutUsPage;
