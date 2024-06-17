@@ -1,6 +1,6 @@
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
-export function FeaturedVenuesCards() {
+export function FeaturedVenuesCardsSection() {
   return (
     <div className="container mx-auto">
       <HoverEffect items={projects} />

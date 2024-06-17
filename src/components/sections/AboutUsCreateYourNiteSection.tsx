@@ -2,9 +2,9 @@
 import React from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
 
-export function CreateYourNite() {
+export function AboutUsCreateYourNiteSection() {
   return (
-    <div className="h-[20rem] container flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[20rem] bg-black w-screen mt-24 flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="md:text-5xl text-xl lg:text-7xl font-bold text-center text-white relative z-20">
         Create Your Nite
       </h1>

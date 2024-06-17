@@ -2,11 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
-import { AboutUsText } from "./aboutUsTextSection";
-import { OurTeam } from "./aboutUsOurTeamSection";
-import { CreateYourNite } from "./aboutUsCreateYourNiteSection";
+import { AboutUsTextSection } from "./AboutUsTextSection";
+import { AboutUsOurTeamSection } from "./AboutUsOurTeamSection";
+import { AboutUsCreateYourNiteSection } from "./AboutUsCreateYourNiteSection";
 
-export function AboutUs() {
+export function AboutUsSection() {
   return (
     <LampContainer>
       <motion.h1
@@ -21,9 +21,9 @@ export function AboutUs() {
       >
         ABOUT US
       </motion.h1>
-      <AboutUsText />
-      <OurTeam />
-      <CreateYourNite />
+      <AboutUsTextSection />
+      <AboutUsOurTeamSection />
+      <AboutUsCreateYourNiteSection />
     </LampContainer>
   );
 }

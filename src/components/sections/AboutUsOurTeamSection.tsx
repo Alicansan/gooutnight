@@ -69,7 +69,7 @@ const content = [
     ),
   },
 ];
-export function OurTeam() {
+export function AboutUsOurTeamSection() {
   return (
     <div className="mt-36 container">
       <StickyScroll content={content} />
