@@ -1,14 +1,21 @@
-import SearchSection from '@/components/search-section/SearchSection'
-import { ModeToggle } from '@/components/theme-toggle'
-import { Button } from '@/components/ui/button'
-import dynamic from 'next/dynamic'
-import Image from 'next/image'
+import { ModeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
+import { FeaturedVenuesAlternativeCardsSection } from "@/components/sections/FeaturedVenuesAlternativeCardsSection";
+import { FeaturedVenuesCardsSection } from "@/components/sections/FeaturedVenuesCardsSection";
+import { FeaturedVenuesSection } from "@/components/sections/FeaturedVenuesSection";
+import { HeroSection } from "@/components/sections/HeroSection";
+import Image from "next/image";
+import SearchSection from "@/components/sections/SearchSection";
 
 export default function Home() {
   return (
-    <main className='container mx-auto w-full'>
+    <main className="flex flex-col items-center justify-between">
       <ModeToggle />
+      <HeroSection />
       <SearchSection />
+      <FeaturedVenuesSection />
+      <FeaturedVenuesCardsSection />
+      <FeaturedVenuesAlternativeCardsSection />
     </main>
-  )
+  );
 }
