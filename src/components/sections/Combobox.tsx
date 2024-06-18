@@ -1,38 +1,26 @@
-'use client'
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from '@/components/ui/command'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
-import { useState } from 'react'
-import {
-  Check,
-  ChevronsUpDown,
-} from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+'use client';
+import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList,} from '@/components/ui/command';
+import {Popover, PopoverContent, PopoverTrigger,} from '@/components/ui/popover';
+import {useState} from 'react';
+import {Check, ChevronsUpDown} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {cn} from '@/lib/utils';
 
 interface ComboboxProps {
-  label: string
-  items: string[]
-  className?: string
+  label: string;
+  items: string[];
+  defaultValue?: string;
+  className?: string;
 }
 
 export const Combobox = ({
-  label,
-  items,
-  className,
+ label,
+ items,
+ defaultValue = '',
+ className,
 }: ComboboxProps) => {
-  const [open, setOpen] = useState(false)
-  const [value, setValue] = useState('')
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(defaultValue);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -41,48 +29,31 @@ export const Combobox = ({
           variant='outline'
           role='combobox'
           aria-expanded={open}
-          className={cn(
-            'justify-between',
-            className
-          )}
+          className={cn('justify-between', className)}
         >
-          {value
-            ? items.find(
-                (item) => item === value
-              ) || 'Select an option'
-            : `${label}`}
+          {value || `${label}`}
           <ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50 ' />
         </Button>
       </PopoverTrigger>
       <PopoverContent className='p-0 '>
         <Command>
-          <CommandInput
-            placeholder={`Search ${label}`}
-          />
+          <CommandInput placeholder={`Search ${label}`} />
           <CommandList className='no-scrollbar'>
-            <CommandEmpty>
-              No {label} found.
-            </CommandEmpty>
+            <CommandEmpty>No {label} found.</CommandEmpty>
             <CommandGroup>
               {items.map((item) => (
                 <CommandItem
                   key={item}
                   value={item}
                   onSelect={(currentValue) => {
-                    setValue(
-                      currentValue === value
-                        ? ''
-                        : currentValue
-                    )
-                    setOpen(false)
+                    setValue(currentValue === value ? '' : currentValue);
+                    setOpen(false);
                   }}
                 >
                   <Check
                     className={cn(
                       'mr-2 h-4 w-4',
-                      value === item
-                        ? 'opacity-100'
-                        : 'opacity-0'
+                      value === item ? 'opacity-100' : 'opacity-0'
                     )}
                   />
                   {item}
@@ -93,5 +64,5 @@ export const Combobox = ({
         </Command>
       </PopoverContent>
     </Popover>
-  )
-}
+  );
+};
