@@ -2,9 +2,9 @@
 import React, { FunctionComponent } from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
-import { AboutUsTextSection } from "@/app/AboutUsPage/AboutUsTextSection";
-import { AboutUsOurTeamSection } from "@/app/AboutUsPage/AboutUsOurTeamSection";
-import { AboutUsCreateYourNiteSection } from "@/app/AboutUsPage/AboutUsCreateYourNiteSection";
+import {AboutUsTextSection} from "@/components/pages/about-us/AboutUsTextSection";
+import {AboutUsOurTeamSection} from "@/components/pages/about-us/AboutUsOurTeamSection";
+import {AboutUsCreateYourNiteSection} from "@/components/pages/about-us/AboutUsCreateYourNiteSection";
 
 const AboutUsPage: FunctionComponent = () => {
   return (
