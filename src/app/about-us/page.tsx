@@ -1,13 +1,16 @@
 "use client";
-import React, { FunctionComponent } from "react";
-import { motion } from "framer-motion";
-import { LampContainer } from "@/components/ui/lamp";
+import React, {FunctionComponent} from "react";
+import {motion} from "framer-motion";
+import {LampContainer} from "@/components/ui/lamp";
 import {AboutUsTextSection} from "@/components/pages/about-us/AboutUsTextSection";
 import {AboutUsOurTeamSection} from "@/components/pages/about-us/AboutUsOurTeamSection";
 import {AboutUsCreateYourNiteSection} from "@/components/pages/about-us/AboutUsCreateYourNiteSection";
+import Navbar from "@/components/navbar/Navbar";
 
 const AboutUsPage: FunctionComponent = () => {
   return (
+    <>
+    <Navbar />
     <LampContainer>
       <motion.h1
         initial={{ opacity: 0.5, y: 100 }}
@@ -25,6 +28,7 @@ const AboutUsPage: FunctionComponent = () => {
       <AboutUsOurTeamSection />
       <AboutUsCreateYourNiteSection />
     </LampContainer>
+    </>
   );
 };
 export default AboutUsPage;
