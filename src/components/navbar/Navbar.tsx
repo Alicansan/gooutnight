@@ -30,7 +30,9 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-background dark:bg-background-dark py-4 w-full border-b-4 border-indigo-300">
       <div className="container mx-auto flex items-center justify-between">
-        <div className="text-foreground text-xl font-bold">NIGHTLIFENAV</div>
+        <Link href="/">
+          <div className="text-foreground text-xl font-bold">NITELIFENAV</div>
+        </Link>
         <div className="hidden lg:flex flex-1 justify-center space-x-4">
           {links}
         </div>
