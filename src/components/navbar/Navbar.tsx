@@ -1,10 +1,10 @@
 "use client";
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import HamburgerIcon from "@/components/icons/hamburgerIcon";
-import {ModeToggle} from "@/components/theme-toggle";
-import {Combobox} from "@/components/sections/Combobox";
+import { ModeToggle } from "@/components/theme-toggle";
+import { Combobox } from "@/components/sections/Combobox";
 
 const languages = [
   { value: "en", label: "English", icon: "🇬🇧" },
@@ -20,10 +20,30 @@ const Navbar: React.FC = () => {
 
   const links = (
     <>
-      <Link href="/home" className="text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500">FAQs</Link>
-      <Link href="/about-us" className="text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500">About Us</Link>
-      <Link href="/services" className="text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500">Twitter</Link>
-      <Link href="/contact" className="text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500">Angel List</Link>
+      <Link
+        href="/faq"
+        className="text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500"
+      >
+        FAQs
+      </Link>
+      <Link
+        href="/about-us"
+        className="text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500"
+      >
+        About Us
+      </Link>
+      <Link
+        href="/services"
+        className="text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500"
+      >
+        Twitter
+      </Link>
+      <Link
+        href="/contact"
+        className="text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500"
+      >
+        Angel List
+      </Link>
     </>
   );
 
@@ -40,13 +60,16 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:block">
             <Combobox
               label="Language"
-              items={languages.map(lang => `${lang.icon} ${lang.label}`)}
+              items={languages.map((lang) => `${lang.icon} ${lang.label}`)}
               defaultValue={`${languages[0].icon} ${languages[0].label}`}
               className="w-40"
             />
           </div>
           <ModeToggle />
-          <button onClick={toggleMenu} className="text-foreground focus:outline-none lg:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-foreground focus:outline-none lg:hidden"
+          >
             <HamburgerIcon isOpen={isOpen} />
           </button>
         </div>
@@ -56,7 +79,7 @@ const Navbar: React.FC = () => {
           {links}
           <Combobox
             label="Language"
-            items={languages.map(lang => `${lang.icon} ${lang.label}`)}
+            items={languages.map((lang) => `${lang.icon} ${lang.label}`)}
             defaultValue={`${languages[0].icon} ${languages[0].label}`}
             className="w-40 mt-4"
           />
