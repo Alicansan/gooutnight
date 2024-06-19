@@ -1,20 +1,24 @@
-"use client";
-import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
-import { cn } from "@/lib/utils";
+'use client'
+import { useEffect } from 'react'
+import {
+  motion,
+  stagger,
+  useAnimate,
+} from 'framer-motion'
+import { cn } from '@/lib/utils'
 
 export const TextGenerateEffect = ({
   words,
   className,
 }: {
-  words: string;
-  className?: string;
+  words: string
+  className?: string
 }) => {
-  const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const [scope, animate] = useAnimate()
+  let wordsArray = words.split(' ')
   useEffect(() => {
     animate(
-      "span",
+      'span',
       {
         opacity: 1,
       },
@@ -22,8 +26,8 @@ export const TextGenerateEffect = ({
         duration: 2,
         delay: stagger(0.2),
       }
-    );
-  }, [animate]);
+    )
+  }, [animate])
 
   const renderWords = () => {
     return (
@@ -32,23 +36,25 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className="dark:text-white text-white opacity-0"
+              className='dark:text-foreground text-foreground opacity-0'
             >
-              {word}{" "}
+              {word}{' '}
             </motion.span>
-          );
+          )
         })}
       </motion.div>
-    );
-  };
+    )
+  }
 
   return (
-    <div className={cn("container mt-72", className)}>
-      <div className="mt-4">
-        <div className=" dark:text-white text-white text-2xl leading-snug tracking-wide">
+    <div
+      className={cn('container mt-72', className)}
+    >
+      <div className='mt-4'>
+        <div className=' dark:text-foreground text-foreground text-2xl leading-snug tracking-wide'>
           {renderWords()}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
