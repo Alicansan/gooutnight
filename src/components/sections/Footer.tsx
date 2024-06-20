@@ -10,9 +10,9 @@ const Footer = () => {
   return (
     <>
       <footer className='container my-6'>
-        <div className='flex flex-row items-center  max-lg:flex-col border-y-2 px-24 py-6'>
+        <div className='flex flex-row items-center  max-lg:flex-col border-y-2 border-indigo-300 px-24 py-6'>
           <div className='flex flex-col items-center'>
-            <div className='border-2 bg-red-300 w-36 h-12 text-center '>
+            <div className='border-2 bg-accent w-36 h-12 text-center '>
               {/* TODO: Logo will be here */}
             </div>
             <p className='mt-6 text-base leading-7  text-foreground sm:max-w-md text-center'>
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
 
         <div className='flex  justify-between my-12 text-white-400 max-sm:flex-col max-sm:items-center'>
-          <div className='flex flex-col md:flex-row items-center justify-start flex-1 gap-2 cursor-pointer '>
+          <div className='flex flex-col md:flex-row items-center justify-start flex-1 gap-2 cursor-pointer lg:mx-24 '>
             <p className='text-center mb-6'>
               NITELIFENAV Copyright © 2024. All
               rights reserved.
