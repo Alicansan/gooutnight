@@ -18,11 +18,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en ' className='no-scrollbar'>
       <body
         className={
           inter.className +
-          'scrollbar-hide min-h-screen w-full max-w-screen overflow-x-hidden bg-background text-foreground antialiased overflow-auto'
+          ' min-h-screen w-full max-w-screen overflow-x-hidden bg-background text-foreground antialiased overflow-auto'
         }
       >
         <ThemeProvider

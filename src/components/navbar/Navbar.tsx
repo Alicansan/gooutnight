@@ -35,13 +35,19 @@ const Navbar: React.FC = () => {
       </Link>
       <Link
         href='https://twitter.com/nitelifenav'
+        passHref
         className='text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500'
+        target='_blank'
+        rel='noopener noreferrer'
       >
         Twitter
       </Link>
       <Link
         href='https://angel.co/nitelifenav'
+        passHref
         className='text-foreground hover:text-foreground-hover py-2 px-4 text-xl font-bold hover:text-blue-500'
+        target='_blank'
+        rel='noopener noreferrer'
       >
         Angel List
       </Link>
