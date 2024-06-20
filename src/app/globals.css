@@ -65,6 +65,9 @@
   * {
     @apply border-border;
   }
+  html {
+    @apply no-scrollbar;
+  }
   body {
     @apply bg-background text-foreground;
   }
