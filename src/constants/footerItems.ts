@@ -36,8 +36,8 @@ export const socialMediaLinks = [
 
 export const footerItems = [
   {
-    name: 'About',
-    link: '/about',
+    name: 'About Us',
+    link: '/about-us',
   },
   {
     name: 'FAQS',
