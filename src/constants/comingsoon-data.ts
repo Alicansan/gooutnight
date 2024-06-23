@@ -1,6 +1,1 @@
-export const comingSoonData = [
-  'Miami',
-  'Las Vegas',
-  'Los Angeles',
-  'Denver',
-]
+export const comingSoonData = ["Miami", "Las Vegas", "Los Angeles", "Denver"];

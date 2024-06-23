@@ -1,21 +1,21 @@
-import React from 'react'
-import { Vortex } from '@/components/ui/vortex'
+import React from "react";
+
+import { Vortex } from "@/components/ui/vortex";
 
 export function HeroSection() {
   return (
-    <div className='mb-24 w-screen mx-auto rounded-md  h-[30rem] overflow-hidden bg-background'>
+    <div className="mx-auto mb-24 h-[30rem] w-screen overflow-hidden rounded-md bg-background">
       <Vortex
-        backgroundColor='transparent'
-        className='flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full'
+        backgroundColor="transparent"
+        className="flex h-full w-full flex-col items-center justify-center px-2 py-4 md:px-10"
       >
-        <h2 className='text-foreground text-2xl md:text-6xl font-bold text-center'>
+        <h2 className="text-center text-2xl font-bold text-foreground md:text-6xl">
           Create Your Nite
         </h2>
-        <p className='text-foreground text-sm md:text-2xl max-w-xl mt-6 text-center'>
-          We Will Provide The Right Information
-          For Your Best Night Out!
+        <p className="mt-6 max-w-xl text-center text-sm text-foreground md:text-2xl">
+          We Will Provide The Right Information For Your Best Night Out!
         </p>
       </Vortex>
     </div>
-  )
+  );
 }

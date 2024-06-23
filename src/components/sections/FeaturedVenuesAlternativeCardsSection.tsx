@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
-import { BackgroundGradient } from "@/components/ui/background-gradient";
 import Image from "next/image";
+import React from "react";
+
+import { BackgroundGradient } from "@/components/ui/background-gradient";
 
 const venues = [
   {
@@ -56,11 +57,11 @@ const venues = [
 
 export function FeaturedVenuesAlternativeCardsSection() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-8">
+    <div className="grid grid-cols-1 gap-8 py-10 md:grid-cols-2 lg:grid-cols-3">
       {venues.map((venue) => (
         <BackgroundGradient
           key={venue.id}
-          className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900"
+          className="max-w-sm rounded-[22px] bg-white p-4 dark:bg-zinc-900 sm:p-10"
         >
           <Image
             src={venue.src}
@@ -69,7 +70,7 @@ export function FeaturedVenuesAlternativeCardsSection() {
             width="600"
             className="object-contain"
           />
-          <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+          <p className="mb-2 mt-4 text-base text-black dark:text-neutral-200 sm:text-xl">
             {venue.name}
           </p>
 
@@ -77,7 +78,7 @@ export function FeaturedVenuesAlternativeCardsSection() {
             {venue.address}
           </p>
           <a href={venue.link}>
-            <button className="rounded-full dark:text-white text-black flex items-center space-x-1 bg-white mt-4 text-sm p-2 font-bold dark:bg-zinc-800 border dark:border-white border-black opacity-60 group-hover:opacity-100 transition duration-500 will-change-transform hover:font-extrabold">
+            <button className="mt-4 flex items-center space-x-1 rounded-full border border-black bg-white p-2 text-sm font-bold text-black opacity-60 transition duration-500 will-change-transform hover:font-extrabold group-hover:opacity-100 dark:border-white dark:bg-zinc-800 dark:text-white">
               <span>View Listing</span>
             </button>
           </a>

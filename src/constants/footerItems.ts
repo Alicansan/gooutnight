@@ -1,54 +1,54 @@
 import {
   FaFacebook,
-  FaTwitter,
   FaInstagram,
-  FaTiktok,
   FaTelegram,
-} from 'react-icons/fa'
+  FaTiktok,
+  FaTwitter,
+} from "react-icons/fa";
 
 export const socialMediaLinks = [
   {
-    name: 'Facebook',
+    name: "Facebook",
     icon: FaFacebook,
-    link: 'https://www.facebook.com/',
+    link: "https://www.facebook.com/",
   },
   {
-    name: 'Twitter',
+    name: "Twitter",
     icon: FaTwitter,
-    link: 'https://twitter.com/nitelifenav',
+    link: "https://twitter.com/nitelifenav",
   },
   {
-    name: 'Instagram',
+    name: "Instagram",
     icon: FaInstagram,
-    link: 'https://www.instagram.com/',
+    link: "https://www.instagram.com/",
   },
   {
-    name: 'TikTok',
+    name: "TikTok",
     icon: FaTiktok,
-    link: 'https://www.tiktok.com/',
+    link: "https://www.tiktok.com/",
   },
   {
-    name: 'Telegram',
+    name: "Telegram",
     icon: FaTelegram,
-    link: 'https://t.me/',
+    link: "https://t.me/",
   },
-]
+];
 
 export const footerItems = [
   {
-    name: 'About Us',
-    link: '/about-us',
+    name: "About Us",
+    link: "/about-us",
   },
   {
-    name: 'FAQS',
-    link: '/faqs',
+    name: "FAQS",
+    link: "/faqs",
   },
   {
-    name: 'Angel List',
-    link: 'https://angel.co/nitelifenav',
+    name: "Angel List",
+    link: "https://angel.co/nitelifenav",
   },
   {
-    name: 'Contact',
-    link: '/',
+    name: "Contact",
+    link: "/",
   },
-]
+];

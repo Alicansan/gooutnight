@@ -1,11 +1,11 @@
-'use client'
-import React, { FunctionComponent } from 'react'
-import { motion } from 'framer-motion'
-import { LampContainer } from '@/components/ui/lamp'
-import { AboutUsTextSection } from '@/components/pages/about-us/AboutUsTextSection'
-import { AboutUsOurTeamSection } from '@/components/pages/about-us/AboutUsOurTeamSection'
-import { AboutUsCreateYourNiteSection } from '@/components/pages/about-us/AboutUsCreateYourNiteSection'
-import Navbar from '@/components/navbar/Navbar'
+"use client";
+import { motion } from "framer-motion";
+import React, { FunctionComponent } from "react";
+
+import { AboutUsCreateYourNiteSection } from "@/components/pages/about-us/AboutUsCreateYourNiteSection";
+import { AboutUsOurTeamSection } from "@/components/pages/about-us/AboutUsOurTeamSection";
+import { AboutUsTextSection } from "@/components/pages/about-us/AboutUsTextSection";
+import { LampContainer } from "@/components/ui/lamp";
 
 const AboutUsPage: FunctionComponent = () => {
   return (
@@ -17,9 +17,9 @@ const AboutUsPage: FunctionComponent = () => {
           transition={{
             delay: 0.3,
             duration: 0.8,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
-          className='bg-gradient-to-br from-slate-200 to-slate-600 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl'
+          className="bg-gradient-to-br from-slate-200 to-slate-600 bg-clip-text py-4 text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
         >
           ABOUT US
         </motion.h1>
@@ -28,6 +28,6 @@ const AboutUsPage: FunctionComponent = () => {
         <AboutUsCreateYourNiteSection />
       </LampContainer>
     </>
-  )
-}
-export default AboutUsPage
+  );
+};
+export default AboutUsPage;

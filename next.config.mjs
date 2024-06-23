@@ -3,10 +3,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'nitelifenav.com',
-        port: '',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "nitelifenav.com",
+        port: "",
+        pathname: "/**",
       },
     ],
   },

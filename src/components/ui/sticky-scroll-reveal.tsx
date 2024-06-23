@@ -1,7 +1,8 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+
 import { cn } from "@/lib/utils";
 
 export const StickyScroll = ({
@@ -35,7 +36,7 @@ export const StickyScroll = ({
         }
         return acc;
       },
-      0
+      0,
     );
     setActiveCard(closestBreakpointIndex);
   });
@@ -52,7 +53,7 @@ export const StickyScroll = ({
   ];
 
   const [backgroundGradient, setBackgroundGradient] = useState(
-    linearGradients[0]
+    linearGradients[0],
   );
 
   useEffect(() => {
@@ -65,7 +66,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[40rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10 gap-10"
+      className="relative flex h-[40rem] justify-center gap-10 space-x-10 overflow-y-auto rounded-md p-10"
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
@@ -90,7 +91,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg text-slate-300 max-w-sm mt-10"
+                className="text-kg mt-10 max-w-sm text-slate-300"
               >
                 {item.description}
               </motion.p>
@@ -102,8 +103,8 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-61 w-70 rounded-md bg-white sticky top-1 overflow-hidden",
-          contentClassName
+          "h-61 w-70 sticky top-1 hidden overflow-hidden rounded-md bg-white lg:block",
+          contentClassName,
         )}
       >
         {content[activeCard].content ?? null}

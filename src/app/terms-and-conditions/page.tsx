@@ -1,41 +1,30 @@
-import Comments from '@/components/sections/Comments'
+import React from "react";
 
-import { FeaturedVenuesPaginationSection } from '@/components/sections/FeaturedVenuesPagination'
-import React from 'react'
+import Comments from "@/components/sections/Comments";
+import { FeaturedVenuesPaginationSection } from "@/components/sections/FeaturedVenuesPagination";
 
 const page = () => {
   return (
-    <div className='overflow-hidden container flex flex-col items-center justify-center my-24'>
-      <h1 className='text-2xl font-bold my-6'>
-        Terms and Conditions
-      </h1>
-      <p className='m-auto lg:px-[12rem] italic font-thin'>
-        Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Ducimus consequatur
-        magni provident! Fuga unde vel rem
-        repellendus vero error, ea beatae saepe
-        totam labore voluptatem quis est quae.
-        Quasi, eveniet? Lorem ipsum dolor, sit
-        amet consectetur adipisicing elit. Ducimus
-        consequatur magni provident! Fuga unde vel
-        rem repellendus vero error, ea beatae
-        saepe totam labore voluptatem quis est
-        quae. Quasi, eveniet? Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit.
-        Ducimus consequatur magni provident! Fuga
-        unde vel rem repellendus vero error, ea
-        beatae saepe totam labore voluptatem quis
-        est quae. Quasi, eveniet? Lorem ipsum
-        dolor, sit amet consectetur adipisicing
-        elit. Ducimus consequatur magni provident!
-        Fuga unde vel rem repellendus vero error,
-        ea beatae saepe totam labore voluptatem
-        quis est quae. Quasi, eveniet?
+    <div className="container my-24 flex flex-col items-center justify-center overflow-hidden">
+      <h1 className="my-6 text-2xl font-bold">Terms and Conditions</h1>
+      <p className="m-auto font-thin italic lg:px-[12rem]">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+        consequatur magni provident! Fuga unde vel rem repellendus vero error,
+        ea beatae saepe totam labore voluptatem quis est quae. Quasi, eveniet?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+        consequatur magni provident! Fuga unde vel rem repellendus vero error,
+        ea beatae saepe totam labore voluptatem quis est quae. Quasi, eveniet?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+        consequatur magni provident! Fuga unde vel rem repellendus vero error,
+        ea beatae saepe totam labore voluptatem quis est quae. Quasi, eveniet?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+        consequatur magni provident! Fuga unde vel rem repellendus vero error,
+        ea beatae saepe totam labore voluptatem quis est quae. Quasi, eveniet?
       </p>
       <FeaturedVenuesPaginationSection />
       <Comments />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
