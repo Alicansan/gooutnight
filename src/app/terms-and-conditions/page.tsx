@@ -1,4 +1,6 @@
 import Comments from '@/components/sections/Comments'
+
+import { FeaturedVenuesPaginationSection } from '@/components/sections/FeaturedVenuesPagination'
 import React from 'react'
 
 const page = () => {
@@ -30,7 +32,7 @@ const page = () => {
         ea beatae saepe totam labore voluptatem
         quis est quae. Quasi, eveniet?
       </p>
-
+      <FeaturedVenuesPaginationSection />
       <Comments />
     </div>
   )
