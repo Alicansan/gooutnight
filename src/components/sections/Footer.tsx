@@ -6,8 +6,8 @@ import { footerItems, socialMediaLinks } from "@/constants/footerItems";
 const Footer = () => {
   return (
     <>
-      <footer className="container my-6">
-        <div className="flex flex-row items-center border-y-2 border-indigo-300 py-6 max-lg:flex-col">
+      <footer className="container my-2">
+        <div className="flex flex-row items-center border-y border-indigo-300 py-6 max-lg:flex-col">
           <div className="flex flex-col items-center lg:max-w-[300px] lg:items-start">
             <Link href="/">
               <div className="text-xl font-bold text-foreground">
@@ -31,11 +31,11 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-1 flex-col items-end justify-between gap-3 lg:gap-5">
+          <div className="flex flex-1 flex-col items-end justify-between gap-2 lg:gap-4">
             {footerItems.map((section) => (
               <div key={section.name}>
                 <ul>
-                  <li className="text-white-400 hover:text-slate-gray w-[90px] text-center text-base leading-normal">
+                  <li className="text-white-400 hover:text-slate-gray w-[90px] text-right text-base leading-normal">
                     <a href={section.link}>{section.name}</a>
                   </li>
                 </ul>
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-white-400 my-12 flex items-center justify-between max-sm:flex-col sm:items-start">
+        <div className="text-white-400 my-6 flex items-center justify-between max-sm:flex-col sm:items-start">
           <div className="flex flex-1 cursor-pointer flex-col items-center justify-start gap-2 md:flex-row">
             <p className="mb-6 text-center text-sm">
               NITELIFENAV Copyright © 2024. All rights reserved.

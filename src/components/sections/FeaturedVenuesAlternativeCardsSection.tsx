@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import { BackgroundGradient } from "@/components/ui/background-gradient";
+import { Button } from "@/components/ui/button";
 
 const venues = [
   {
@@ -57,11 +59,11 @@ const venues = [
 
 export function FeaturedVenuesAlternativeCardsSection() {
   return (
-    <div className="grid grid-cols-1 gap-8 py-10 md:grid-cols-2 lg:grid-cols-3">
+    <div className="container grid w-full grid-cols-1 gap-8 py-10 md:grid-cols-2 lg:grid-cols-3">
       {venues.map((venue) => (
         <BackgroundGradient
           key={venue.id}
-          className="max-w-sm rounded-[22px] bg-white p-4 dark:bg-zinc-900 sm:p-10"
+          className="rounded-[22px] bg-white p-4 dark:bg-zinc-900 sm:p-10"
         >
           <Image
             src={venue.src}
@@ -77,11 +79,9 @@ export function FeaturedVenuesAlternativeCardsSection() {
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
             {venue.address}
           </p>
-          <a href={venue.link}>
-            <button className="mt-4 flex items-center space-x-1 rounded-full border border-black bg-white p-2 text-sm font-bold text-black opacity-60 transition duration-500 will-change-transform hover:font-extrabold group-hover:opacity-100 dark:border-white dark:bg-zinc-800 dark:text-white">
-              <span>View Listing</span>
-            </button>
-          </a>
+          <Button asChild variant="link" className="mt-4 !px-0">
+            <Link href={venue.link}>View Listing</Link>
+          </Button>
         </BackgroundGradient>
       ))}
     </div>

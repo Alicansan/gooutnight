@@ -4,7 +4,7 @@ import { Vortex } from "@/components/ui/vortex";
 
 export function HeroSection() {
   return (
-    <div className="mx-auto mb-24 h-[30rem] w-screen overflow-hidden rounded-md bg-background">
+    <div className="mx-auto my-24 h-[30rem] w-screen overflow-hidden rounded-md bg-background">
       <Vortex
         backgroundColor="transparent"
         className="flex h-full w-full flex-col items-center justify-center px-2 py-4 md:px-10"
