@@ -9,24 +9,30 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import { VenuePhoto, venuePhotos } from "@/constants/venuephotos";
+
 export function CarouselDemo() {
   return (
     <Carousel className="w-full max-w-md px-4">
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
+        {venuePhotos.map((venue: VenuePhoto) => (
+          <CarouselItem key={venue.id}>
+            <div>
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                <CardContent className="flex aspect-square items-center justify-center p-2">
+                  <img
+                    src={venue.image}
+                    alt={venue.name}
+                    className="h-full w-full object-cover"
+                  />
                 </CardContent>
               </Card>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden cursor-pointer lg:flex" />
+      <CarouselNext className="hidden cursor-pointer lg:flex" />
     </Carousel>
   );
 }

@@ -89,6 +89,7 @@ const config: Config = {
       });
     },
     require("tailwindcss-animate"),
+
     addVariablesForColors,
   ],
 };
