@@ -27,4 +27,4 @@ function ModeToggle() {
   );
 }
 
-export { ModeToggle,ThemeProvider };
+export { ModeToggle, ThemeProvider };

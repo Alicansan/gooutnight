@@ -24,6 +24,8 @@ interface ComboboxProps {
   items: string[];
   defaultValue?: string;
   className?: string;
+  onChange?: (value: string) => void;
+  disabled?: boolean;
 }
 
 export const Combobox = ({
@@ -31,6 +33,8 @@ export const Combobox = ({
   items,
   defaultValue = "",
   className,
+  onChange,
+  disabled,
 }: ComboboxProps) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(defaultValue);
@@ -43,6 +47,7 @@ export const Combobox = ({
           role="combobox"
           aria-expanded={open}
           className={cn("justify-between", className)}
+          disabled={disabled}
         >
           {value || `${label}`}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -60,6 +65,7 @@ export const Combobox = ({
                   value={item}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue);
+                    onChange?.(currentValue === value ? "" : currentValue);
                     setOpen(false);
                   }}
                 >

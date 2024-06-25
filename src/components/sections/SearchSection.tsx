@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 
 import { searchData } from "@/constants/search-data";
@@ -6,6 +9,8 @@ import { Combobox } from "./Combobox";
 import { SparklesCore } from "../ui/sparkles";
 
 export default function SearchSection() {
+  const [selectedCity, setSelectedCity] = useState<string>("");
+
   return (
     <section className="container mx-auto flex w-full flex-col items-center justify-center">
       <div className="relative grid w-full grid-cols-1 gap-2 py-3 md:grid-cols-2 lg:grid-cols-5">
@@ -15,11 +20,15 @@ export default function SearchSection() {
           label="City"
           items={searchData.cities}
           className="col-span-1"
+          onChange={(value) => {
+            setSelectedCity(value);
+          }}
         />
         <Combobox
           label="Neighbourhood"
           items={searchData.neighbourhoods}
           className="col-span-1"
+          disabled={selectedCity === ""}
         />
         <Combobox
           label="Genre"
@@ -37,17 +46,12 @@ export default function SearchSection() {
           </div>
         </Button>
       </div>
-      <DimLight side="right"></DimLight>
+      <DimLight />
     </section>
   );
 }
 
-interface DimLightProps {
-  side: "left" | "right";
-  children?: React.ReactNode;
-}
-
-const DimLight = ({ side, children }: DimLightProps) => {
+const DimLight = () => {
   return (
     <div className="relative z-[-99] h-40 w-[16rem] md:w-[40rem]">
       {/* Gradient */}

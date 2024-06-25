@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={cn(
-        "dark:bg-background-dark fixed z-[999] w-full border-b-2 border-indigo-300 bg-background py-4",
+        "dark:bg-background-dark fixed z-[99] w-full border-b-2 border-indigo-300 bg-background py-4",
         {
           "bg-background/80 backdrop-blur-sm": isScrolled,
         },
@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
         <div className="absolute left-1/2 hidden -translate-x-1/2 justify-center space-x-4 lg:flex">
           <NavBarLinks />
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="relative flex items-center space-x-4">
           <div className="hidden lg:block">
             <Combobox
               label="Language"

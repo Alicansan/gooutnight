@@ -12,10 +12,10 @@ import { faqItems } from "@/constants/faqItems";
 const FaqPage: FunctionComponent = () => {
   return (
     <>
-      <div className="mt-16 flex justify-center">
-        <div className="w-full max-w-3xl px-4">
+      <section className="container flex justify-center">
+        <div className="min-h-[calc(100vh_-_24rem)] w-full px-4 py-24">
           <h1 className="mb-8 text-center text-3xl">FAQs</h1>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="multiple" className="mx-auto w-[70%]">
             {faqItems.map((item) => (
               <AccordionItem key={item.value} value={item.value}>
                 <AccordionTrigger>{item.question}</AccordionTrigger>
@@ -24,7 +24,7 @@ const FaqPage: FunctionComponent = () => {
             ))}
           </Accordion>
         </div>
-      </div>
+      </section>
     </>
   );
 };
