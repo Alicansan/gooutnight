@@ -13,7 +13,10 @@ interface FeaturedVenueFields {
   website: string;
   phone: string;
   address: string;
-  hours: Record<string, string>;
+  addressLink: string;
+  days: string[];
+  hours: string[];
+  musicFormats: string[];
   dressCode: string;
   generalAdmission: string;
   bestNights: string;
@@ -23,20 +26,39 @@ interface FeaturedVenueFields {
   age: string;
 }
 
-const defaultFields: FeaturedVenueFields = {
+export const defaultFields: FeaturedVenueFields = {
   website:
     "https://www.facebook.com/The-Bitter-End-271565771373/?rf=926486317417237",
   phone: "(415) 221-9538",
   address: "441 Clement St San Francisco, CA 94118",
-  hours: {
-    Monday: "3pm – 2am",
-    Tuesday: "3pm – 2am",
-    Wednesday: "4pm – 2am",
-    Thursday: "3pm – 2am",
-    Friday: "3pm – 2am",
-    Saturday: "11am to 2:00am",
-    Sunday: "11am to 2:00am",
-  },
+  addressLink: "https://g.co/kgs/pxLCBEu",
+  days: [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ],
+  hours: [
+    "3pm – 2am",
+    "3pm – 2am",
+    "4pm – 2am",
+    "3pm – 2am",
+    "3pm – 2am",
+    "11am - 2am",
+    "11am - 2am",
+  ],
+  musicFormats: [
+    " Techno",
+    "Hip Hop ",
+    " Top RnB",
+    " DnB",
+    " Deep House",
+    " Breakcore",
+    " EDM",
+  ],
   dressCode: "Casual",
   generalAdmission: "Free Admission",
   bestNights: "Tuesday, Friday, and Saturday",
@@ -44,7 +66,7 @@ const defaultFields: FeaturedVenueFields = {
     "Casual crowd with a good mixture of tourists, locals and international tourists",
   lgbtq: "Welcome",
   welcome: "No",
-  age: "18-20",
+  age: "20+",
 };
 
 const defaultDescription = `The Bitter End is in the center of 6th & Clement neighborhood, but that’s not the only reason it is the neighborhood hang out bar. The bartenders are fast, friendly and funny. The local regulars are decent looking and friendly as well. The Tuesday Trivia night is always packed and is renowned as the best in San Francisco. The bar possesses a large, yet standard selection of beers on taps and you’re ensured a very generous shot portions. Simple mixed drinks with the well alcohol leave something to be desired but if you order something slightly more complex or order premium alcohol the bartenders will make sure you get your money’s worth.

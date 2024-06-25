@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 import { BackgroundGradient } from "@/components/ui/background-gradient";
@@ -12,6 +13,8 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+
+import { featuredVenues } from "@/constants/featured-venues";
 
 const venues = [
   {
@@ -122,40 +125,35 @@ export function FeaturedVenuesPaginationSection() {
     if (page > totalPages) page = totalPages;
     setCurrentPage(page);
   };
+  //this one conflicts with featured venues no need to fix but rn
 
-  const currentVenues = venues.slice(
+  const oldfeaturedVenues = venues.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage,
   );
 
   return (
     <div>
-      <div className="grid grid-cols-1 items-center justify-center gap-8 py-10 md:grid-cols-2 lg:grid-cols-4">
-        {currentVenues.map((venue) => (
-          <BackgroundGradient
-            key={venue.id}
-            className="max-w-sm rounded-[22px] bg-white p-4 dark:bg-zinc-900 sm:p-10"
-          >
-            <Image
-              src={venue.src}
-              alt={venue.alt}
-              height="400"
-              width="600"
-              className="object-contain"
-            />
-            <p className="mb-2 mt-4 text-base text-black dark:text-neutral-200 sm:text-xl">
-              {venue.name}
-            </p>
+      <div className="container grid w-full grid-cols-1 gap-8 py-10 md:grid-cols-2 lg:grid-cols-3">
+        {featuredVenues.map((venue) => (
+          <Link href={`/venues/${venue.slug}`} key={venue.id}>
+            <BackgroundGradient className="rounded-[22px] bg-white dark:bg-zinc-900 sm:p-6">
+              <Image
+                src={venue.src}
+                alt={venue.alt}
+                height="400"
+                width="600"
+                className="object-contain pt-6"
+              />
+              <p className="mb-2 mt-4 text-base text-black dark:text-neutral-200 sm:text-xl">
+                {venue.name}
+              </p>
 
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {venue.address}
-            </p>
-            <a href={venue.link}>
-              <button className="mt-4 flex items-center space-x-1 rounded-full border border-black bg-white p-2 text-sm font-bold text-black opacity-60 transition duration-500 will-change-transform hover:font-extrabold group-hover:opacity-100 dark:border-white dark:bg-zinc-800 dark:text-white">
-                <span>View Listing</span>
-              </button>
-            </a>
-          </BackgroundGradient>
+              <p className="pb-6 text-sm text-neutral-600 dark:text-neutral-400">
+                {venue.address}
+              </p>
+            </BackgroundGradient>
+          </Link>
         ))}
       </div>
 
