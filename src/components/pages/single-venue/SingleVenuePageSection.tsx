@@ -6,6 +6,10 @@ import Comments from "@/components/sections/Comments";
 
 import { FeaturedVenue } from "@/constants/featured-venues";
 import { venuePhotos } from "@/constants/venuephotos";
+import MapSection from "@/components/sections/MapSection";
+
+import "leaflet/dist/leaflet.css";
+
 interface SingleVenuePageSectionProps {
   venue: FeaturedVenue;
 }
@@ -126,6 +130,12 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
           </div>
         </div>
       </div>
+
+      <MapSection
+        coordinates={venue.fields.coord}
+        venueName={venue.name}
+        address={venue.address}
+      />
 
       <Comments />
     </div>

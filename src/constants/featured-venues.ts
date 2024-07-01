@@ -1,3 +1,5 @@
+import { LatLngTuple } from "leaflet";
+
 export interface FeaturedVenue {
   id: number;
   slug: string;
@@ -14,6 +16,7 @@ interface FeaturedVenueFields {
   phone: string;
   address: string;
   addressLink: string;
+  coord: LatLngTuple;
   days: string[];
   hours: string[];
   musicFormats: string[];
@@ -32,6 +35,7 @@ export const defaultFields: FeaturedVenueFields = {
   phone: "(415) 221-9538",
   address: "441 Clement St San Francisco, CA 94118",
   addressLink: "https://g.co/kgs/pxLCBEu",
+  coord: [37.783499158608905, -122.46372472267073],
   days: [
     "Monday",
     "Tuesday",
