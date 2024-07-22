@@ -22,10 +22,10 @@ export function ComingSoon() {
           className="bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text py-4 text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
         >
           <div className="relative flex flex-col md:flex-row">
-            <div className="absolute bottom-[315px] left-[80px] text-3xl font-bold text-foreground drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] md:bottom-[110px] md:left-[200px] md:w-[480px] md:text-6xl">
+            <div className="absolute bottom-[300px] left-[80px] text-wrap text-3xl font-bold text-foreground drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] sm:bottom-[315px] md:bottom-[110px] md:left-[200px] md:w-[480px] md:text-6xl">
               COMING SOON
             </div>
-            <div className="md:2 flex flex-col gap-3 px-24 md:flex-row">
+            <div className="md:2 mt-24 flex flex-col gap-3 px-24 md:flex-row">
               {comingSoonData.map((item) => (
                 <BackgroundGradient
                   key={item}
