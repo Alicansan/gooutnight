@@ -34,21 +34,21 @@ export const socialMediaLinks = [
   },
 ];
 
-export const footerItems = [
-  {
-    name: "About Us",
-    link: "/about-us",
-  },
-  {
-    name: "FAQS",
-    link: "/faqs",
-  },
-  {
-    name: "Angel List",
-    link: "https://angel.co/nitelifenav",
-  },
-  {
-    name: "Contact",
-    link: "/",
-  },
-];
+// export const footerItems = [
+//   {
+//     name: "About Us",
+//     link: "/about-us",
+//   },
+//   {
+//     name: "FAQS",
+//     link: "/faqs",
+//   },
+//   {
+//     name: "Angel List",
+//     link: "https://angel.co/nitelifenav",
+//   },
+//   {
+//     name: "Contact",
+//     link: "/",
+//   },
+// ];

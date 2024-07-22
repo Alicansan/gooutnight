@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -14,7 +14,7 @@ const languages = [
   // Add more languages if needed
 ];
 
-const NavBarLinks = () => (
+const NavBarLinks = ({ onClick }: { onClick: () => void }) => (
   <>
     <Link
       href="/faq"
@@ -25,6 +25,7 @@ const NavBarLinks = () => (
     <Link
       href="/about-us"
       className="px-4 py-2 text-foreground transition-all hover:text-blue-500"
+      onClick={onClick}
     >
       About Us
     </Link>
@@ -34,6 +35,7 @@ const NavBarLinks = () => (
       className="px-4 py-2 text-foreground transition-all hover:text-blue-500"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={onClick}
     >
       Twitter
     </Link>
@@ -43,6 +45,7 @@ const NavBarLinks = () => (
       className="px-4 py-2 text-foreground transition-all hover:text-blue-500"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={onClick}
     >
       Angel List
     </Link>
@@ -54,8 +57,22 @@ const Navbar: React.FC = () => {
 
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
+  const navbarRef = useRef<HTMLDivElement>(null);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      navbarRef.current &&
+      !navbarRef.current.contains(event.target as Node)
+    ) {
+      setIsOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -63,11 +80,16 @@ const Navbar: React.FC = () => {
       setIsScrolled(window.scrollY > 0);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
     <nav
+      ref={navbarRef}
       className={cn(
         "dark:bg-background-dark fixed z-[99] w-full border-b-2 border-indigo-300 bg-background py-4",
         {
@@ -80,7 +102,7 @@ const Navbar: React.FC = () => {
           <div className="text-xl font-bold text-foreground">NITELIFENAV</div>
         </Link>
         <div className="absolute left-1/2 hidden -translate-x-1/2 justify-center space-x-4 lg:flex">
-          <NavBarLinks />
+          <NavBarLinks onClick={closeMenu} />
         </div>
         <div className="relative flex items-center space-x-4">
           <div className="hidden lg:block">
@@ -102,7 +124,7 @@ const Navbar: React.FC = () => {
       </div>
       {isOpen && (
         <div className="mt-4 flex flex-col items-center lg:hidden">
-          <NavBarLinks />
+          <NavBarLinks onClick={closeMenu} />
           <Combobox
             label="Language"
             items={languages.map((lang) => `${lang.icon} ${lang.label}`)}
