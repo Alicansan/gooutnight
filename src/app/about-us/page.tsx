@@ -26,6 +26,7 @@ const AboutUsPage: FunctionComponent = () => {
         <TextGenerateEffect words={words} className="mt-24" />
         <AboutUsOurTeamSection />
       </LampContainer>
+      {/* test */}
     </>
   );
 };
