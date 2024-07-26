@@ -18,7 +18,7 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
   return (
     <section className="items-center justify-center">
       <div className="relative">
-        <div className="pointer-events-none absolute">
+        <div className="pointer-events-auto absolute">
           <VenueSlider
             venuePhotos={venuePhotos}
             className="-top-10 left-28 -z-10 hidden blur-lg md:block md:w-[90%]"
@@ -33,7 +33,7 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
         <div className="z-10 mx-auto mt-[170px] flex w-full flex-col justify-center gap-2 rounded-xl bg-background pb-16 md:-mt-2 md:rounded-t-[70px] lg:items-center lg:justify-center">
           <div className="mx-auto flex w-full flex-col items-center justify-center rounded-[120px] bg-gradient-to-t from-background from-10% via-secondary via-70% to-background to-90% pb-32">
             <div className="flex w-full max-w-6xl px-2 py-12">
-              <h1 className="mx-auto my-12 text-start text-3xl font-bold capitalize text-foreground md:mt-24">
+              <h1 className="font-mulish mx-auto my-12 text-start text-3xl font-[1000] uppercase text-foreground md:mt-24">
                 {venue.name}
               </h1>
             </div>
@@ -47,7 +47,7 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
         </div>
       </div>
       <div className="container mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-center lg:justify-center">
-        <div className="flex h-full w-full flex-col items-start justify-center gap-4 rounded-lg border border-border bg-secondary p-6 text-sm lg:p-12">
+        <div className="flex h-full w-full flex-col items-start justify-center gap-4 rounded-lg border border-border bg-secondary p-6 text-sm font-extrabold lg:p-12">
           <div className="">
             Dress Code:{" "}
             <span className="font-semibold">{venue.fields.dressCode}</span>
@@ -108,7 +108,7 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
             </Link>
           </div>
         </div>
-        <div className="h-full w-full items-center rounded-lg border border-border bg-secondary lg:col-span-1">
+        <div className="h-full w-full items-center rounded-lg border border-border bg-secondary font-extrabold lg:col-span-1">
           <div className="grid grid-cols-3 gap-4 p-6 lg:p-12">
             <div className="flex flex-col items-start justify-start gap-2">
               <span className="text-left text-sm font-semibold">Days</span>

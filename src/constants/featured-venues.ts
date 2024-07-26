@@ -145,7 +145,7 @@ export const featuredVenues: FeaturedVenue[] = [
     src: "/example7.png",
     alt: "example7",
     name: "Hooch",
-    address: "25 Wall StOrlando, FL 32801",
+    address: "25 Wall St Orlando, FL 32801",
     description: defaultDescription,
     fields: defaultFields,
   },

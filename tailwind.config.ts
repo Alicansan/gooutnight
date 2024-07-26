@@ -21,6 +21,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        mulish: ["var(--font-mulish)"],
+        Inter: ["var(--font-inter)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

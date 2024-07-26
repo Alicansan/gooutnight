@@ -9,7 +9,7 @@ import { featuredVenues } from "@/constants/featured-venues";
 
 export function FeaturedVenuesAlternativeCardsSection() {
   return (
-    <div className="container grid grid-cols-1 gap-10 py-10 md:grid-cols-2 lg:grid-cols-3">
+    <div className="container grid h-full w-full grid-cols-1 gap-10 bg-background py-10 md:grid-cols-2 lg:grid-cols-3">
       {featuredVenues.map((venue) => (
         <Link href={`/venues/${venue.slug}`} key={venue.id}>
           <BackgroundGradient className="rounded-[22px] bg-white pb-4 dark:bg-zinc-900">
