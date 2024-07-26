@@ -18,7 +18,7 @@ const MapSection = ({ coordinates, venueName, address }: MapSectionProps) => {
       center={coordinates}
       zoom={13}
       scrollWheelZoom={false}
-      className="md:m-w-[90vw] relative z-10 my-4 h-[420px] w-full flex-1 rounded-lg border-4 border-accent md:h-[645px]"
+      className="relative z-10 my-4 h-[420px] w-full flex-1 rounded-lg border-4 border-accent md:h-[55vh] md:max-w-[90vw]"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

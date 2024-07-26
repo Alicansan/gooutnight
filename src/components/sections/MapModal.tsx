@@ -16,7 +16,7 @@ export default function MapModal({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="absolute h-[70vh] w-[70vw] bg-secondary p-4 shadow-lg"
+        className="container absolute h-[75vh] w-[50vw] rounded-lg bg-secondary p-4 shadow-lg"
       >
         {children}
       </div>

@@ -14,9 +14,15 @@ interface Coordinate {
 
 interface MultipleLocationMapProps {
   coordinates: Coordinate[];
+  mapHeight?: string;
+  mobileMapHeight?: string;
 }
 
-const MultipleLocationMap = ({ coordinates }: MultipleLocationMapProps) => {
+const MultipleLocationMap = ({
+  coordinates,
+  mapHeight = "md:h-[245px]",
+  mobileMapHeight = "h-[120px]",
+}: MultipleLocationMapProps) => {
   const center: LatLngTuple =
     coordinates.length > 0 ? coordinates[0].coord : [0, 0];
 
@@ -25,7 +31,7 @@ const MultipleLocationMap = ({ coordinates }: MultipleLocationMapProps) => {
       center={center}
       zoom={13}
       scrollWheelZoom={false}
-      className="md:m-w-[90vw] relative z-10 my-4 h-[420px] w-full flex-1 rounded-lg border-4 border-accent md:h-[645px]"
+      className={`relative z-10 my-4 w-full flex-1 rounded-lg border-4 border-accent ${mapHeight} ${mobileMapHeight} `}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

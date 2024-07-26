@@ -8,17 +8,27 @@ import { coordinates } from "@/constants/coordinates";
 
 const CompactMap = () => {
   const [showModal, setShowModal] = useState(false);
-  const handleShowModal = () => setShowModal(!showModal);
+  const handleShowModal = () => {
+    setShowModal(!showModal);
+  };
 
   return (
-    <div className="container relative h-full w-full">
+    <div className="container relative -mb-14 h-full w-full">
       <button onClick={handleShowModal} className="h-full w-full">
-        <MultipleLocationMap coordinates={coordinates} />
+        <MultipleLocationMap
+          mapHeight="  md:h-[245px] "
+          mobileMapHeight="h-[920px]"
+          coordinates={coordinates}
+        />
       </button>
 
       {showModal && (
         <MapModal handleShowModal={handleShowModal}>
-          <MultipleLocationMap coordinates={coordinates} />
+          <MultipleLocationMap
+            mapHeight="  md:h-[645px] "
+            mobileMapHeight="h-[920px]"
+            coordinates={coordinates}
+          />
         </MapModal>
       )}
     </div>
