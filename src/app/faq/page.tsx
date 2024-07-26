@@ -1,5 +1,3 @@
-import { FunctionComponent } from "react";
-
 import {
   Accordion,
   AccordionContent,
@@ -9,7 +7,7 @@ import {
 
 import { faqItems } from "@/constants/faqItems";
 
-const FaqPage: FunctionComponent = () => {
+const FaqPage = () => {
   return (
     <>
       <section className="m-auto flex w-[1000px] items-center justify-center">
