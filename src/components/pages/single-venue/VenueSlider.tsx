@@ -1,3 +1,4 @@
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import * as React from "react";
 
@@ -8,32 +9,35 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 import { VenuePhoto } from "@/constants/venuephotos";
-
 interface VenueSliderProps {
   venuePhotos: VenuePhoto[];
   className?: string;
 }
 
 const VenueSlider = ({ venuePhotos, className }: VenueSliderProps) => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true }),
+  );
   return (
-    <Carousel className={cn("w-full px-4", className)}>
+    <Carousel
+      className={cn("w-full md:px-4", className)}
+      plugins={[plugin.current]}
+    >
       <CarouselContent>
         {venuePhotos.map((venue) => (
           <CarouselItem key={venue.id}>
             <div>
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-2">
+              <Card className="md:rounded-[30px]">
+                <CardContent className="flex aspect-[21/9] items-center justify-center p-0">
                   <Image
                     src={venue.image}
                     alt={venue.name}
-                    width={600}
+                    width={1200}
                     height={600}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover md:rounded-[30px]"
                   />
                 </CardContent>
               </Card>
@@ -41,8 +45,8 @@ const VenueSlider = ({ venuePhotos, className }: VenueSliderProps) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="hidden cursor-pointer lg:flex" />
-      <CarouselNext className="hidden cursor-pointer lg:flex" />
+      {/* <CarouselPrevious className="hidden cursor-pointer lg:flex" />
+      <CarouselNext className="hidden cursor-pointer lg:flex" /> */}
     </Carousel>
   );
 };
