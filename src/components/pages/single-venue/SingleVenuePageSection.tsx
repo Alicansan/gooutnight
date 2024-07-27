@@ -33,7 +33,7 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
         <div className="z-10 mx-auto mt-[170px] flex w-full flex-col justify-center gap-2 rounded-xl bg-background pb-16 md:-mt-2 md:rounded-t-[70px] lg:items-center lg:justify-center">
           <div className="mx-auto flex w-full flex-col items-center justify-center rounded-[120px] bg-gradient-to-t from-background from-10% via-secondary via-70% to-background to-90% pb-32">
             <div className="flex w-full max-w-6xl px-2 py-12">
-              <h1 className="font-mulish mx-auto my-12 text-start text-3xl font-[1000] uppercase text-foreground md:mt-24">
+              <h1 className="mx-auto my-12 text-start font-mulish text-3xl font-[1000] uppercase text-foreground md:mt-24">
                 {venue.name}
               </h1>
             </div>
