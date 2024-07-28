@@ -11,7 +11,7 @@ interface Comment {
   body: string;
 }
 
-const Comments: React.FC = () => {
+const Comments = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState<string>("");
 

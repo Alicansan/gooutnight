@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
 
+import "leaflet/dist/leaflet.css";
+
 import VenueSlider from "@/components/pages/single-venue/VenueSlider";
 import Comments from "@/components/sections/Comments";
+import MapSection from "@/components/sections/MapSection";
 
 import { FeaturedVenue } from "@/constants/featured-venues";
 import { venuePhotos } from "@/constants/venuephotos";
-import MapSection from "@/components/sections/MapSection";
-
-import "leaflet/dist/leaflet.css";
 
 interface SingleVenuePageSectionProps {
   venue: FeaturedVenue;
@@ -16,28 +16,40 @@ interface SingleVenuePageSectionProps {
 
 const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
   return (
-    <div>
-      <h1 className="text-center text-3xl font-bold uppercase text-foreground">
-        {venue.name}
-      </h1>
-      <div className="mt-12 flex w-full justify-center gap-4 rounded-xl border border-border bg-secondary p-4 lg:flex-col lg:items-start lg:justify-start lg:p-12">
-        <div className="flex w-full flex-col-reverse justify-center lg:flex-row lg:items-center lg:gap-10">
-          <p className="text-balance p-2 text-sm md:text-base lg:max-w-xl lg:p-0">
-            {venue.description}
-          </p>
-          <div className="w-full flex-1 p-4">
-            <VenueSlider
-              venuePhotos={venuePhotos}
-              className="mx-auto w-full md:max-w-3xl"
-            />
+    <section className="items-center justify-center">
+      <div className="relative">
+        <div className="pointer-events-auto absolute">
+          <VenueSlider
+            venuePhotos={venuePhotos}
+            className="-top-10 left-28 -z-10 hidden blur-lg md:block md:w-[90%]"
+          />
+        </div>
+
+        <VenueSlider
+          venuePhotos={venuePhotos}
+          className="fixed top-16 -z-10 mx-auto max-h-[700px] w-full sm:relative md:z-10 md:-mb-[30px] md:max-w-[1200px]"
+        />
+
+        <div className="z-10 mx-auto mt-[170px] flex w-full flex-col justify-center gap-2 rounded-xl bg-background pb-16 md:-mt-2 md:rounded-t-[70px] lg:items-center lg:justify-center">
+          <div className="mx-auto flex w-full flex-col items-center justify-center rounded-[120px] bg-gradient-to-t from-background from-10% via-secondary via-70% to-background to-90% pb-32">
+            <div className="flex w-full max-w-6xl px-2 py-12">
+              <h1 className="mx-auto my-12 text-start font-mulish text-3xl font-[1000] uppercase text-foreground md:mt-24">
+                {venue.name}
+              </h1>
+            </div>
+
+            <div className="flex w-full flex-col-reverse justify-center rounded-xl px-2 md:rounded-t-[70px] lg:flex-row lg:items-center">
+              <p className="mt-4 max-w-4xl text-balance px-2 text-sm md:text-base">
+                {venue.description}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-center lg:justify-center">
-        <div className="flex h-full w-full flex-col items-start justify-center gap-4 rounded-lg border border-border bg-secondary p-6 text-sm lg:p-12">
+      <div className="container mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-center lg:justify-center">
+        <div className="flex h-full w-full flex-col items-start justify-center gap-4 rounded-lg border border-border bg-secondary p-6 text-sm font-extrabold lg:p-12">
           <div className="">
-            Dress Coderess:{" "}
+            Dress Code:{" "}
             <span className="font-semibold">{venue.fields.dressCode}</span>
           </div>
           <div className="">
@@ -51,10 +63,7 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
           <div className="">
             LGBTQ: <span className="font-semibold">{venue.fields.lgbtq}</span>
           </div>
-          <div className="">
-            Welcome:{" "}
-            <span className="font-semibold">{venue.fields.welcome}</span>
-          </div>
+
           <div className="">
             Age: <span className="font-semibold">{venue.fields.age}</span>
           </div>
@@ -99,7 +108,7 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
             </Link>
           </div>
         </div>
-        <div className="h-full w-full items-center rounded-lg border border-border bg-secondary lg:col-span-1">
+        <div className="h-full w-full items-center rounded-lg border border-border bg-secondary font-extrabold lg:col-span-1">
           <div className="grid grid-cols-3 gap-4 p-6 lg:p-12">
             <div className="flex flex-col items-start justify-start gap-2">
               <span className="text-left text-sm font-semibold">Days</span>
@@ -131,14 +140,15 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
         </div>
       </div>
 
-      <MapSection
-        coordinates={venue.fields.coord}
-        venueName={venue.name}
-        address={venue.address}
-      />
-
-      <Comments />
-    </div>
+      <div className="container">
+        <MapSection
+          coordinates={venue.fields.coord}
+          venueName={venue.name}
+          address={venue.address}
+        />
+        <Comments />
+      </div>
+    </section>
   );
 };
 

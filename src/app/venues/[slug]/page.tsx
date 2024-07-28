@@ -16,7 +16,7 @@ const SingleVenuePage = ({ params }: SingleVenuePageProps) => {
   }
 
   return (
-    <main className="container mx-auto min-h-screen pt-32">
+    <main className="mx-auto min-h-screen pt-32 md:pt-12">
       <SingleVenuePageSection venue={venue} />
     </main>
   );

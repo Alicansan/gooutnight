@@ -29,9 +29,4 @@ export const venuePhotos = [
     name: "Venue 5",
     image: "https://images.pexels.com/photos/1260705/pexels-photo-1260705.jpeg",
   },
-  {
-    id: 6,
-    name: "Venue 6",
-    image: "https://images.pexels.com/photos/2078008/pexels-photo-2078008.jpeg",
-  },
 ];

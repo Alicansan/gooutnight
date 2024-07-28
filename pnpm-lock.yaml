@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@next/font':
+        specifier: ^14.2.5
+        version: 14.2.5(next@14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@radix-ui/react-accordion':
         specifier: ^1.1.2
         version: 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -47,6 +50,9 @@ importers:
       cmdk:
         specifier: ^1.0.0
         version: 1.0.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      embla-carousel-autoplay:
+        specifier: ^8.1.7
+        version: 8.1.7(embla-carousel@8.1.5)
       embla-carousel-react:
         specifier: ^8.1.5
         version: 8.1.5(react@18.3.1)
@@ -243,6 +249,11 @@ packages:
 
   '@next/eslint-plugin-next@14.2.4':
     resolution: {integrity: sha512-svSFxW9f3xDaZA3idQmlFw7SusOuWTpDTAeBlO3AEPDltrraV+lqs7mAc6A27YdnpQVVIA3sODqUAAHdWhVWsA==}
+
+  '@next/font@14.2.5':
+    resolution: {integrity: sha512-e2f3M+tAuJPUyXwWtEPKlPfpPEKODiQvPjdxOWBZC+zgdGv18KfjTkEmopfkfpZ016yCvw5BmMPeuEU/uiDf9g==}
+    peerDependencies:
+      next: '*'
 
   '@next/swc-darwin-arm64@14.2.4':
     resolution: {integrity: sha512-AH3mO4JlFUqsYcwFUHb1wAKlebHU/Hv2u2kb1pAuRanDZ7pD/A/KPD98RHZmwsJpdHQwfEc/06mgpSzwrJYnNg==}
@@ -1362,6 +1373,11 @@ packages:
 
   electron-to-chromium@1.4.810:
     resolution: {integrity: sha512-Kaxhu4T7SJGpRQx99tq216gCq2nMxJo+uuT6uzz9l8TVN2stL7M06MIIXAtr9jsrLs2Glflgf2vMQRepxawOdQ==}
+
+  embla-carousel-autoplay@8.1.7:
+    resolution: {integrity: sha512-UXt1XvCNwzC/Sqd7iU8nYd1CjuDLweIwJClfBL3gVTzHQBVwb68GBBfC/oPFsEeIWNUZe8NO5xDQSI9aTnYO7Q==}
+    peerDependencies:
+      embla-carousel: 8.1.7
 
   embla-carousel-react@8.1.5:
     resolution: {integrity: sha512-xFmfxgJd7mpWDHQ4iyK1Qs+5BTTwu4bkn+mSROKiUH9nKpPHTeilQ+rpeQDCHRrAPeshD67aBk0/p6FxWxXsng==}
@@ -3018,6 +3034,10 @@ snapshots:
     dependencies:
       glob: 10.3.10
 
+  '@next/font@14.2.5(next@14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+    dependencies:
+      next: 14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+
   '@next/swc-darwin-arm64@14.2.4':
     optional: true
 
@@ -4219,6 +4239,10 @@ snapshots:
   eastasianwidth@0.2.0: {}
 
   electron-to-chromium@1.4.810: {}
+
+  embla-carousel-autoplay@8.1.7(embla-carousel@8.1.5):
+    dependencies:
+      embla-carousel: 8.1.5
 
   embla-carousel-react@8.1.5(react@18.3.1):
     dependencies:

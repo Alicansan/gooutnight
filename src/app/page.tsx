@@ -1,4 +1,5 @@
 import ComingSoon from "@/components/sections/ComingSoon";
+import CompactMap from "@/components/sections/CompactMap";
 import { FeaturedVenuesAlternativeCardsSection } from "@/components/sections/FeaturedVenuesAlternativeCardsSection";
 import { FeaturedVenuesSection } from "@/components/sections/FeaturedVenuesSection";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <SearchSection />
       <FeaturedVenuesSection />
+      <CompactMap />
       <FeaturedVenuesAlternativeCardsSection />
       <ComingSoon />
     </main>
