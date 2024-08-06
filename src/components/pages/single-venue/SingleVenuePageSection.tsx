@@ -7,8 +7,8 @@ import VenueSlider from "@/components/pages/single-venue/VenueSlider";
 import Comments from "@/components/sections/Comments";
 import MapSection from "@/components/sections/MapSection";
 
-import { FeaturedVenue } from "@/constants/featured-venues";
-import { venuePhotos } from "@/constants/venuephotos";
+import {FeaturedVenue} from "@/constants/featured-venues";
+import {venuePhotos} from "@/constants/venuephotos";
 
 interface SingleVenuePageSectionProps {
   venue: FeaturedVenue;

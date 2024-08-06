@@ -87,6 +87,7 @@ export interface Place {
   title: string;
   description: string;
   link: string;
+  image: number | Media;
   updatedAt: string;
   createdAt: string;
 }

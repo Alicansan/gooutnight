@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
-import { BackgroundGradient } from "@/components/ui/background-gradient";
+import {BackgroundGradient} from "@/components/ui/background-gradient";
 
 interface Venue {
   id: number;
@@ -23,7 +23,7 @@ export function FeaturedVenuesAlternativeCardsSection() {
       try {
         const response = await fetch("/api/info");
         const data = await response.json();
-        setVenues(data);
+        setVenues(data ?? []);
       } catch (error) {
         console.error("Error fetching venues:", error);
       }
@@ -31,6 +31,8 @@ export function FeaturedVenuesAlternativeCardsSection() {
 
     fetchData();
   }, []);
+
+  if(venues.length === 0) return null;
 
   return (
     <div className="container grid h-full w-full grid-cols-1 gap-10 bg-background py-10 sm:grid-cols-2 lg:grid-cols-3">
