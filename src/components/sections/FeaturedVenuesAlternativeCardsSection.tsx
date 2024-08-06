@@ -1,17 +1,41 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 
-import { featuredVenues } from "@/constants/featured-venues";
+interface Venue {
+  id: number;
+  src: string;
+  alt: string;
+  name: string;
+  address: string;
+  link: string;
+}
 
 export function FeaturedVenuesAlternativeCardsSection() {
+  const [venues, setVenues] = useState<Venue[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/info");
+        const data = await response.json();
+        setVenues(data);
+      } catch (error) {
+        console.error("Error fetching venues:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="container grid h-full w-full grid-cols-1 gap-10 bg-background py-10 sm:grid-cols-2 lg:grid-cols-3">
-      {featuredVenues.map((venue) => (
-        <Link href={`/venues/${venue.slug}`} key={venue.id}>
+      {venues.map((venue) => (
+        <Link href={venue.link} key={venue.id}>
           <BackgroundGradient className="rounded-[22px] bg-white pb-4 dark:bg-zinc-900">
             <Image
               src={venue.src}
