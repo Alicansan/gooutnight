@@ -14,6 +14,8 @@ export interface Config {
     users: User;
     media: Media;
     places: Place;
+    'about-us': AboutUs;
+    faqs: Faq;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -88,6 +90,29 @@ export interface Place {
   description: string;
   link: string;
   image: number | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-us".
+ */
+export interface AboutUs {
+  id: number;
+  title: string;
+  description: string;
+  image: number | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs".
+ */
+export interface Faq {
+  id: number;
+  question: string;
+  answer: string;
   updatedAt: string;
   createdAt: string;
 }

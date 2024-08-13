@@ -1,11 +1,12 @@
+import configPromise from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+
 import ComingSoon from "@/components/sections/ComingSoon";
 import CompactMap from "@/components/sections/CompactMap";
 import { FeaturedVenuesAlternativeCardsSection } from "@/components/sections/FeaturedVenuesAlternativeCardsSection";
 import { FeaturedVenuesSection } from "@/components/sections/FeaturedVenuesSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import SearchSection from "@/components/sections/SearchSection";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import configPromise from "@payload-config";
 
 export default async function Home() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -21,7 +22,7 @@ export default async function Home() {
       <SearchSection />
       <FeaturedVenuesSection />
       <CompactMap />
-      {/* <FeaturedVenuesAlternativeCardsSection /> */}
+      <FeaturedVenuesAlternativeCardsSection places={places} />
       <ComingSoon />
     </main>
   );
