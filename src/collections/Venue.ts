@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
 
-const Places: CollectionConfig = {
-  slug: "places",
+const Venue: CollectionConfig = {
+  slug: "venue",
   fields: [
     {
       name: "title",
@@ -14,9 +14,14 @@ const Places: CollectionConfig = {
       required: true,
     },
     {
+      name: "address",
+      type: "relationship",
+      relationTo: "address",
+      required: true,
+    },
+    {
       name: "link",
       type: "text",
-      required: true,
     },
     {
       name: "image",
@@ -27,4 +32,4 @@ const Places: CollectionConfig = {
   ],
 };
 
-export { Places };
+export { Venue };

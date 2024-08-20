@@ -12,8 +12,9 @@ export interface Config {
   };
   collections: {
     users: User;
+    venue: Venue;
+    address: Address;
     media: Media;
-    places: Place;
     'about-us': AboutUs;
     faqs: Faq;
     'payload-preferences': PayloadPreference;
@@ -63,6 +64,36 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "venue".
+ */
+export interface Venue {
+  id: number;
+  title: string;
+  description: string;
+  address: number | Address;
+  link?: string | null;
+  image: number | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "address".
+ */
+export interface Address {
+  id: number;
+  'Full Address': string;
+  'street number': string;
+  'street name': string;
+  city: string;
+  State: string;
+  'ZIP Code': number;
+  Coordinates?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
@@ -79,19 +110,6 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "places".
- */
-export interface Place {
-  id: number;
-  title: string;
-  description: string;
-  link: string;
-  image: number | Media;
-  updatedAt: string;
-  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

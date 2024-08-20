@@ -7,10 +7,11 @@ import sharp from "sharp";
 import { fileURLToPath } from "url";
 
 import { AboutUs } from "@/collections/AboutUs";
+import { Address } from "@/collections/Address";
 import { Faqs } from "@/collections/Faqs";
+import { Venue } from "@/collections/Venue";
 
 import { Media } from "./collections/Media";
-import { Places } from "./collections/Places";
 import { Users } from "./collections/Users";
 
 const filename = fileURLToPath(import.meta.url);
@@ -20,7 +21,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Media, Places, AboutUs, Faqs], // Places koleksiyonunu buraya ekleyin
+  collections: [Users, Venue, Address, Media, AboutUs, Faqs], // Places koleksiyonunu buraya ekleyin
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
