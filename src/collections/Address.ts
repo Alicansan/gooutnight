@@ -5,27 +5,27 @@ import AddressSearch from "@/collections/views/AddressSearch";
 const Address: CollectionConfig = {
   slug: "address",
   admin: {
-    useAsTitle: "Full Address",
+    useAsTitle: "fullAddress",
   },
   fields: [
     {
-      name: "Full Address",
+      name: "fullAddress",
       type: "text",
       required: true,
-      admin: {
-        components: {
-          Field: AddressSearch,
-        },
-      },
+      // admin: {
+      //   components: {
+      //     Field: AddressSearch,
+      //   },
+      // },
     },
     {
-      name: "street number",
+      name: "streetNumber",
       type: "text",
       required: true,
     },
 
     {
-      name: "street name",
+      name: "streetName",
       type: "text",
       required: true,
     },
@@ -35,17 +35,17 @@ const Address: CollectionConfig = {
       required: true,
     },
     {
-      name: "State",
+      name: "state",
       type: "text",
       required: true,
     },
     {
-      name: "ZIP Code",
+      name: "zipCode",
       type: "number",
       required: true,
     },
     {
-      name: "Coordinates",
+      name: "coordinates",
       type: "number",
     },
   ],

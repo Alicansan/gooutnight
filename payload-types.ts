@@ -32,6 +32,7 @@ export interface Config {
 export interface UserAuthOperations {
   forgotPassword: {
     email: string;
+    password: string;
   };
   login: {
     email: string;
@@ -43,6 +44,7 @@ export interface UserAuthOperations {
   };
   unlock: {
     email: string;
+    password: string;
   };
 }
 /**
@@ -82,13 +84,13 @@ export interface Venue {
  */
 export interface Address {
   id: number;
-  'Full Address': string;
-  'street number': string;
-  'street name': string;
+  fullAddress: string;
+  streetNumber: string;
+  streetName: string;
   city: string;
-  State: string;
-  'ZIP Code': number;
-  Coordinates?: number | null;
+  state: string;
+  zipCode: number;
+  coordinates?: number | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -99,6 +101,7 @@ export interface Address {
 export interface Media {
   id: number;
   alt: string;
+  _key?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;

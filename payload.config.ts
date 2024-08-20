@@ -1,6 +1,7 @@
 // storage-adapter-import-placeholder
-import { postgresAdapter } from "@payloadcms/db-postgres";
+import { sqliteAdapter } from "@payloadcms/db-sqlite";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { uploadthingStorage } from "@payloadcms/storage-uploadthing";
 import path from "path";
 import { buildConfig } from "payload";
 import sharp from "sharp";
@@ -9,10 +10,9 @@ import { fileURLToPath } from "url";
 import { AboutUs } from "@/collections/AboutUs";
 import { Address } from "@/collections/Address";
 import { Faqs } from "@/collections/Faqs";
+import { Media } from "@/collections/Media";
+import { Users } from "@/collections/Users";
 import { Venue } from "@/collections/Venue";
-
-import { Media } from "./collections/Media";
-import { Users } from "./collections/Users";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -27,13 +27,24 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
-  db: postgresAdapter({
-    pool: {
-      connectionString: process.env.DATABASE_URI || "",
+  db: sqliteAdapter({
+    // SQLite-specific arguments go here.
+    // `client.url` is required.
+    client: {
+      url: process.env.DATABASE_URL ?? "",
+      authToken: process.env.DATABASE_AUTH_TOKEN,
     },
   }),
   sharp,
   plugins: [
-    // storage-adapter-placeholder
+    uploadthingStorage({
+      collections: {
+        [Media.slug]: true,
+      },
+      options: {
+        apiKey: process.env.UPLOADTHING_SECRET,
+        acl: "public-read",
+      },
+    }),
   ],
 });
