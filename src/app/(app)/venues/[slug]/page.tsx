@@ -1,3 +1,6 @@
+import configPromise from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+
 import SingleVenuePageSection from "@/components/pages/single-venue/SingleVenuePageSection";
 
 import { featuredVenues } from "@/constants/featured-venues";
@@ -8,16 +11,26 @@ interface SingleVenuePageProps {
   };
 }
 
-const SingleVenuePage = ({ params }: SingleVenuePageProps) => {
-  const venue = featuredVenues.find((venue) => venue.slug === params.slug);
+const SingleVenuePage = async ({ params }: SingleVenuePageProps) => {
+  const payload = await getPayloadHMR({ config: configPromise });
 
-  if (!venue) {
-    return <div>Venue not found</div>;
-  }
+  const pageSlug = params.slug
+  const venues = await payload.find({
+    collection: "venue",
+    where:{
+      pageLink: {
+        equals: pageSlug
+      }
+    }
+  });
+
+
+
+ 
 
   return (
     <main className="mx-auto min-h-screen pt-32 md:pt-12">
-      <SingleVenuePageSection venue={venue} />
+      <SingleVenuePageSection venue={venues} />
     </main>
   );
 };

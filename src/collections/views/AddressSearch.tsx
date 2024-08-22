@@ -1,8 +1,8 @@
 "use client";
+
 import { useState } from "react";
 
 const AddressSearch = () => {
-  // const [value, setValue] = useField<string>({path})
   const [address, setAddress] = useState<string>("");
   const [results, setResults] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);

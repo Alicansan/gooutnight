@@ -71,10 +71,29 @@ export interface User {
 export interface Venue {
   id: number;
   title: string;
+  pageLink: string;
   description: string;
   address: number | Address;
-  link?: string | null;
+  phone?: string | null;
+  website?: string | null;
   image: number | Media;
+  bussinessHours: {
+    days?: string | null;
+    hours?: string | null;
+    id?: string | null;
+  }[];
+  genre?:
+    | {
+        style?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  dressCode: string;
+  admission: string;
+  crowdType: string;
+  lgbtq: 'Welcome' | 'Not Welcomed';
+  ageRestriction: 'Yes' | 'No';
+  bestNights: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -84,13 +103,9 @@ export interface Venue {
  */
 export interface Address {
   id: number;
-  fullAddress: string;
-  streetNumber: string;
-  streetName: string;
-  city: string;
-  state: string;
-  zipCode: number;
-  coordinates?: number | null;
+  addressName: string;
+  latitude: number;
+  longitude: number;
   updatedAt: string;
   createdAt: string;
 }

@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -13,10 +12,11 @@ export function FeaturedVenuesAlternativeCardsSection({
 }) {
   if (!venues || venues.length === 0) return null;
 
+  
   return (
     <div className="container grid h-full w-full grid-cols-1 gap-10 bg-background py-10 sm:grid-cols-2 lg:grid-cols-3">
       {venues.docs?.map((venue: any) => (
-        <Link href={venue.link} key={venue.id}>
+        <Link href={`/venues/${venue.pageLink}`} key={venue.id}>
           <BackgroundGradient className="rounded-[22px] bg-white pb-4 dark:bg-zinc-900">
             <Image
               src={venue.image.url}
@@ -31,7 +31,7 @@ export function FeaturedVenuesAlternativeCardsSection({
                 {venue.title}
               </p>
               <p className="pb-3 text-sm text-neutral-600 dark:text-neutral-400">
-                {venue.description}
+                {venue.address.addressName}
               </p>
             </div>
           </BackgroundGradient>

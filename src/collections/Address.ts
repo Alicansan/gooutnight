@@ -1,52 +1,32 @@
 import type { CollectionConfig } from "payload";
 
-import AddressSearch from "@/collections/views/AddressSearch";
-
 const Address: CollectionConfig = {
   slug: "address",
   admin: {
-    useAsTitle: "fullAddress",
+    useAsTitle: "addressName",
   },
   fields: [
     {
-      name: "fullAddress",
+      name: "addressName",
       type: "text",
       required: true,
       // admin: {
       //   components: {
-      //     Field: AddressSearch,
+      //    Field: AddressSearch
       //   },
       // },
     },
     {
-      name: "streetNumber",
-      type: "text",
-      required: true,
-    },
-
-    {
-      name: "streetName",
-      type: "text",
-      required: true,
-    },
-    {
-      name: "city",
-      type: "text",
-      required: true,
-    },
-    {
-      name: "state",
-      type: "text",
-      required: true,
-    },
-    {
-      name: "zipCode",
+      name: "latitude",
+      label: "Latitude",
       type: "number",
       required: true,
     },
     {
-      name: "coordinates",
+      name: "longitude",
+      label: "Longitude",
       type: "number",
+      required: true,
     },
   ],
 };

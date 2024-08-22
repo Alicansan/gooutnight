@@ -1,13 +1,17 @@
-import AddressSearch from "@/collections/views/AddressSearch";
+import configPromise from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+
+import { FeaturedVenuesAlternativeCardsSection } from "@/components/sections/FeaturedVenuesAlternativeCardsSection";
 
 export default async function Home() {
-  // const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayloadHMR({ config: configPromise });
 
-  // const venues = await payload.find({
-  //   collection: "venue",
-  // });
+  const venues = await payload.find({
+    collection: "venue",
+  });
 
-  // TODO: pass the venues to the FeaturedVenuesAlternativeCardsSection component
+  
+  
   return (
     <main className="flex flex-col items-center justify-between overflow-hidden">
       {/* <HeroSection />
@@ -15,8 +19,8 @@ export default async function Home() {
       <FeaturedVenuesSection />
       <CompactMap />
       <ComingSoon /> */}
-      {/* <FeaturedVenuesAlternativeCardsSection venues={venues} /> */}
-      <AddressSearch />
+
+      <FeaturedVenuesAlternativeCardsSection venues={venues} />
     </main>
   );
 }
