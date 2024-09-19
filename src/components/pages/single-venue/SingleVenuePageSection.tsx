@@ -1,15 +1,23 @@
-"use client";
+import dynamic from 'next/dynamic';
 import Link from "next/link";
 
 import "leaflet/dist/leaflet.css";
 
-import VenueSlider from "@/components/pages/single-venue/VenueSlider";
+
 import Comments from "@/components/sections/Comments";
-import MapSection from "@/components/sections/MapSection";
 
 import {FeaturedVenue} from "@/constants/featured-venues";
 import {venuePhotos} from "@/constants/venuephotos";
 import { LatLngTuple } from "leaflet";
+
+const MapSection = dynamic(() => import('@/components/sections/MapSection'), {
+  ssr: false,
+});
+
+const VenueSlider = dynamic(() => import('@/components/pages/single-venue/VenueSlider'), {
+  ssr: false,
+});
+
 
 interface SingleVenuePageSectionProps {
   venue: any;
@@ -22,14 +30,14 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
   venueData.address.latitude,
   venueData.address.longitude,
 ] as LatLngTuple;
-console.log("##############################",venueData)
+
   return (
     <section className="items-center justify-center">
       <div className="relative">
         <div className="pointer-events-auto absolute">
           <VenueSlider
             venuePhotos={venuePhotos}
-            className="-top-10 left-28 -z-10 hidden blur-lg md:block md:w-[90%]"
+            className="ms-auto me-auto -z-10 hidden blur-lg md:block md:w-[100%]"
           />
         </div>
 

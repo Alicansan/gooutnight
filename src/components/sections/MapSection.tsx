@@ -1,3 +1,4 @@
+"use client"
 import { LatLngTuple } from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet-defaulticon-compatibility";
