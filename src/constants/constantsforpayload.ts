@@ -9,7 +9,8 @@ const venueData = {
   },
   phone: "(415) 221-9538",
   website: "https://www.facebook.com/The-Bitter-End-271565771373/?rf=926486317417237",
-  image: "uploadthingy/url/here",
+  image: "https://utfs.io/f/Hz5lKOqDrS79VVQ3r8lsNj9SGd3IgDp1QnT0ZOwMzKVoe64L",
+  venueImages: ["https://utfs.io/f/Hz5lKOqDrS79VVQ3r8lsNj9SGd3IgDp1QnT0ZOwMzKVoe64L"],
   bussinessHours: [
     { days: "Monday", hours: "3pm – 2am" },
     { days: "Tuesday", hours: "3pm – 2am" },

@@ -45,7 +45,21 @@ const Venue: CollectionConfig = {
       relationTo: "media",
       required: true,
     },
-
+    {
+      name: "venueImages",
+      label: "Images of your venue that being displayed as slide image ",
+      type: "array",
+      required: true,
+      fields:[
+        {
+      
+      name: "image",
+      type: "upload",
+      relationTo: "media",
+      required: true,
+    },
+      ]
+    },
     {
       name: "bussinessHours",
       label: "Your open days and their hours",

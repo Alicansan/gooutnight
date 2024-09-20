@@ -77,6 +77,10 @@ export interface Venue {
   phone?: string | null;
   website?: string | null;
   image: number | Media;
+  venueImages: {
+    image: number | Media;
+    id?: string | null;
+  }[];
   bussinessHours: {
     days?: string | null;
     hours?: string | null;

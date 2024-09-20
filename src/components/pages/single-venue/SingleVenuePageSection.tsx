@@ -9,6 +9,7 @@ import Comments from "@/components/sections/Comments";
 import {FeaturedVenue} from "@/constants/featured-venues";
 import {venuePhotos} from "@/constants/venuephotos";
 import { LatLngTuple } from "leaflet";
+import Image from 'next/image';
 
 const MapSection = dynamic(() => import('@/components/sections/MapSection'), {
   ssr: false,
@@ -31,18 +32,20 @@ const SingleVenuePageSection = ({ venue }: SingleVenuePageSectionProps) => {
   venueData.address.longitude,
 ] as LatLngTuple;
 
+
   return (
     <section className="items-center justify-center">
+      
       <div className="relative">
         <div className="pointer-events-auto absolute">
           <VenueSlider
-            venuePhotos={venuePhotos}
+            venuePhotos={venueData.venueImages}
             className="ms-auto me-auto -z-10 hidden blur-lg md:block md:w-[100%]"
           />
         </div>
-
+        
         <VenueSlider
-          venuePhotos={venuePhotos}
+          venuePhotos={venueData.venueImages}
           className="fixed top-16 -z-10 mx-auto max-h-[700px] w-full sm:relative md:z-10 md:-mb-[30px] md:max-w-[1200px]"
         />
 

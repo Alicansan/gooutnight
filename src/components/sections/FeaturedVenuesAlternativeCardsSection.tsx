@@ -15,6 +15,7 @@ export function FeaturedVenuesAlternativeCardsSection({
   
   return (
     <div className="container grid h-full w-full grid-cols-1 gap-10 bg-background py-10 sm:grid-cols-2 lg:grid-cols-3">
+     
       {venues.docs?.map((venue: any) => (
         <Link href={`/venues/${venue.pageLink}`} key={venue.id}>
           <BackgroundGradient className="rounded-[22px] bg-white pb-4 dark:bg-zinc-900">
