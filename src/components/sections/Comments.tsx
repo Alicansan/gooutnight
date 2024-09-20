@@ -35,7 +35,7 @@ const Comments = () => {
   };
 
   return (
-    <section className="md:py-8 lg:py-16">
+    <section className="container md:py-8 lg:py-16">
       <div className="rounded-lg bg-accent p-8">
         <div className="flex w-full items-center">
           <h2 className="text-lg font-bold text-foreground lg:text-xl">

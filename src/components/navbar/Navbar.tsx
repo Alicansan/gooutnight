@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 
 import HamburgerIcon from "@/components/icons/hamburgerIcon";
 import { Combobox } from "@/components/sections/Combobox";
-import { ModeToggle } from "@/components/theme-toggle";
 
 const languages = [
   { value: "en", label: "English", icon: "🇬🇧" },
@@ -90,13 +89,15 @@ const Navbar: React.FC = () => {
   return (
     <nav
       ref={navbarRef}
-      className={cn(
-        "dark:bg-background-dark fixed z-[99] w-full border-b-2 border-indigo-300 bg-background py-4",
-        {
-          "bg-background/80 backdrop-blur-sm": isScrolled,
-        },
-      )}
+      className={cn("fixed z-[99] w-full border-b-2 border-indigo-300 py-4", {
+        "backdrop-blur-sm": isScrolled,
+      })}
     >
+      <div
+        className={cn("absolute left-0 top-0 h-full w-full bg-background", {
+          "bg-background opacity-80 backdrop-blur-sm": isScrolled,
+        })}
+      />
       <div className="container relative mx-auto flex items-center justify-between">
         <Link href="/">
           <div className="text-xl font-bold text-foreground">NITELIFENAV</div>
@@ -113,7 +114,7 @@ const Navbar: React.FC = () => {
               className="w-40"
             />
           </div>
-          <ModeToggle />
+          {/* <ModeToggle /> */}
           <button
             onClick={toggleMenu}
             className="text-foreground focus:outline-none lg:hidden"

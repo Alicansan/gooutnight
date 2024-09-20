@@ -1,3 +1,6 @@
+import configPromise from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+
 import {
   Accordion,
   AccordionContent,
@@ -5,9 +8,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { faqItems } from "@/constants/faqItems";
+const FaqPage = async () => {
+  const payload = await getPayloadHMR({ config: configPromise });
 
-const FaqPage = () => {
+  const faqs = await payload.find({
+    collection: "faqs",
+  });
+
   return (
     <>
       <section className="m-auto flex w-[1000px] items-center justify-center">
@@ -16,10 +23,10 @@ const FaqPage = () => {
             Frequently Asked Questions
           </h1>
           <Accordion type="single" className="mx-auto">
-            {faqItems.map((item) => (
+            {faqs?.docs?.map((item) => (
               <AccordionItem
-                key={item.value}
-                value={item.value}
+                key={item.id}
+                value={item.id.toString()}
                 className="border-none"
               >
                 <AccordionTrigger className="hover:text-whitehover:!no-underline text-start font-bold text-indigo-300 hover:text-black dark:hover:text-white sm:my-2 sm:text-2xl">

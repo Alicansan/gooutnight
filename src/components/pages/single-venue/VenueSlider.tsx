@@ -1,3 +1,4 @@
+"use client";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import * as React from "react";
@@ -12,12 +13,9 @@ import {
 } from "@/components/ui/carousel";
 
 import { VenuePhoto } from "@/constants/venuephotos";
-interface VenueSliderProps {
-  venuePhotos: VenuePhoto[];
-  className?: string;
-}
 
-const VenueSlider = ({ venuePhotos, className }: VenueSliderProps) => {
+const VenueSlider = ({ venuePhotos, className }: any) => {
+  console.log("#######", venuePhotos[0]);
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true }),
   );
@@ -27,18 +25,19 @@ const VenueSlider = ({ venuePhotos, className }: VenueSliderProps) => {
       plugins={[plugin.current]}
     >
       <CarouselContent>
-        {venuePhotos.map((venue) => (
+        {venuePhotos.map((venue: any) => (
           <CarouselItem key={venue.id}>
             <div>
               <Card className="md:rounded-[30px]">
                 <CardContent className="flex aspect-[21/9] items-center justify-center p-0">
                   <Image
-                    src={venue.image}
-                    alt={venue.name}
+                    src={venue.image.url}
+                    alt={venue.alt}
                     width={1200}
                     height={600}
                     className="h-full w-full object-cover md:rounded-[30px]"
                   />
+                  {}
                 </CardContent>
               </Card>
             </div>

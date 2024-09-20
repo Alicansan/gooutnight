@@ -93,5 +93,7 @@ module.exports = {
     "next.config.js",
     "postcss.config.mjs",
     "tailwind.config.ts",
+    "prettier.config.cjs",
+    "database/*",
   ],
 };
