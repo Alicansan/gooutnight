@@ -8,12 +8,16 @@ import { FeaturedVenuesSection } from "@/components/sections/FeaturedVenuesSecti
 import CompactMap from "@/components/sections/CompactMap";
 import ComingSoon from "@/components/sections/ComingSoon";
 
+
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const payload = await getPayloadHMR({ config: configPromise });
 
   const venues = await payload.find({
     collection: "venue",
   });
+  console.log("🚀 ~ Home ~ venues:", venues)
 
   
   

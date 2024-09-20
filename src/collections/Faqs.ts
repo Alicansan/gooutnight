@@ -13,5 +13,7 @@ export const Faqs: CollectionConfig = {
       type: "textarea",
       required: true,
     },
+
+
   ],
 };

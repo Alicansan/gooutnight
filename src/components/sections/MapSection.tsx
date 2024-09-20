@@ -35,7 +35,7 @@ const MapSection = ({ coordinates, venueName, address }: MapSectionProps) => {
   };
 
   return (
-    <div onClick={handleClick}>
+    <div onClick={handleClick} className="container">
       <MapContainer
         center={coordinates}
         zoom={13}

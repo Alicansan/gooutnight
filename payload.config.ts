@@ -3,7 +3,7 @@ import { sqliteAdapter } from "@payloadcms/db-sqlite";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { uploadthingStorage } from "@payloadcms/storage-uploadthing";
 import path from "path";
-import { buildConfig } from "payload";
+import { buildConfig, Payload, RequiredDataFromCollectionSlug } from "payload";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
 
@@ -13,6 +13,9 @@ import { Faqs } from "@/collections/Faqs";
 import { Media } from "@/collections/Media";
 import { Users } from "@/collections/Users";
 import { Venue } from "@/collections/Venue";
+
+import { migrations } from "database/migrations";
+
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -34,6 +37,11 @@ export default buildConfig({
       url: process.env.DATABASE_URL ?? "",
       authToken: process.env.DATABASE_AUTH_TOKEN,
     },
+    push: false,
+    logger: false,
+    migrationDir: "./database/migrations",
+    prodMigrations: migrations,
+
   }),
   sharp,
   plugins: [
@@ -47,4 +55,6 @@ export default buildConfig({
       },
     }),
   ],
+
 });
+
