@@ -1,8 +1,8 @@
 "use client";
 import dynamic from "next/dynamic";
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-import {coordinates} from "@/constants/coordinates";
+import { coordinates } from "@/constants/coordinates";
 
 const DynamicMapModal = dynamic(
   () => import("@/components/sections/MapModal"),

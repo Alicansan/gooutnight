@@ -16,7 +16,6 @@ import { Venue } from "@/collections/Venue";
 
 import { migrations } from "database/migrations";
 
-
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -41,7 +40,6 @@ export default buildConfig({
     logger: false,
     migrationDir: "./database/migrations",
     prodMigrations: migrations,
-
   }),
   sharp,
   plugins: [
@@ -55,6 +53,28 @@ export default buildConfig({
       },
     }),
   ],
-
+  async onInit(payload) {
+    await createDevUser(payload);
+  },
 });
 
+const createDevUser = async (payload: Payload) => {
+  try {
+    const existingUsers = await payload.find({
+      collection: "users",
+      limit: 1,
+    });
+
+    if (existingUsers?.docs?.length === 0) {
+      await payload.create({
+        collection: "users",
+        data: {
+          email: "dev@payloadcms.com",
+          password: "test",
+        },
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import * as React from "react";
@@ -14,10 +14,8 @@ import {
 
 import { VenuePhoto } from "@/constants/venuephotos";
 
-
-
 const VenueSlider = ({ venuePhotos, className }: any) => {
-  console.log("#######", venuePhotos[0])
+  console.log("#######", venuePhotos[0]);
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true }),
   );

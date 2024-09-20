@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const deneme = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default deneme
+export default deneme;

@@ -28,6 +28,7 @@ const nextConfig = {
   },
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  serverExternalPackages: ["@libsql/client", "@payloadcms/db-sqlite", "libsql"],
 };
 
 export default withPayload(nextConfig);

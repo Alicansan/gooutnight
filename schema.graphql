@@ -1,33 +1,78 @@
 type Query {
   User(id: Int!, draft: Boolean): User
-  Users(draft: Boolean, where: User_where, limit: Int, page: Int, sort: String): Users
+  Users(
+    draft: Boolean
+    where: User_where
+    limit: Int
+    page: Int
+    sort: String
+  ): Users
   countUsers(draft: Boolean, where: User_where): countUsers
   docAccessUser(id: Int!): usersDocAccess
   meUser: usersMe
   initializedUser: Boolean
   Venue(id: Int!, draft: Boolean): Venue
-  Venues(draft: Boolean, where: Venue_where, limit: Int, page: Int, sort: String): Venues
+  Venues(
+    draft: Boolean
+    where: Venue_where
+    limit: Int
+    page: Int
+    sort: String
+  ): Venues
   countVenues(draft: Boolean, where: Venue_where): countVenues
   docAccessVenue(id: Int!): venueDocAccess
   Address(id: Int!, draft: Boolean): Address
-  Addresses(draft: Boolean, where: Address_where, limit: Int, page: Int, sort: String): Addresses
+  Addresses(
+    draft: Boolean
+    where: Address_where
+    limit: Int
+    page: Int
+    sort: String
+  ): Addresses
   countAddresses(draft: Boolean, where: Address_where): countAddresses
   docAccessAddress(id: Int!): addressDocAccess
   Media(id: Int!, draft: Boolean): Media
-  allMedia(draft: Boolean, where: Media_where, limit: Int, page: Int, sort: String): allMedia
+  allMedia(
+    draft: Boolean
+    where: Media_where
+    limit: Int
+    page: Int
+    sort: String
+  ): allMedia
   countallMedia(draft: Boolean, where: Media_where): countallMedia
   docAccessMedia(id: Int!): mediaDocAccess
   AboutUs(id: Int!, draft: Boolean): AboutUs
-  Aboutuses(draft: Boolean, where: AboutUs_where, limit: Int, page: Int, sort: String): Aboutuses
+  Aboutuses(
+    draft: Boolean
+    where: AboutUs_where
+    limit: Int
+    page: Int
+    sort: String
+  ): Aboutuses
   countAboutuses(draft: Boolean, where: AboutUs_where): countAboutuses
   docAccessAboutUs(id: Int!): about_usDocAccess
   Faq(id: Int!, draft: Boolean): Faq
-  Faqs(draft: Boolean, where: Faq_where, limit: Int, page: Int, sort: String): Faqs
+  Faqs(
+    draft: Boolean
+    where: Faq_where
+    limit: Int
+    page: Int
+    sort: String
+  ): Faqs
   countFaqs(draft: Boolean, where: Faq_where): countFaqs
   docAccessFaq(id: Int!): faqsDocAccess
   PayloadPreference(id: Int!, draft: Boolean): PayloadPreference
-  PayloadPreferences(draft: Boolean, where: PayloadPreference_where, limit: Int, page: Int, sort: String): PayloadPreferences
-  countPayloadPreferences(draft: Boolean, where: PayloadPreference_where): countPayloadPreferences
+  PayloadPreferences(
+    draft: Boolean
+    where: PayloadPreference_where
+    limit: Int
+    page: Int
+    sort: String
+  ): PayloadPreferences
+  countPayloadPreferences(
+    draft: Boolean
+    where: PayloadPreference_where
+  ): countPayloadPreferences
   docAccessPayloadPreference(id: Int!): payload_preferencesDocAccess
   Access: Access
 }
@@ -54,7 +99,10 @@ scalar DateTime
 """
 A field whose value conforms to the standard internet email address format as specified in HTML Spec: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address.
 """
-scalar EmailAddress @specifiedBy(url: "https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address")
+scalar EmailAddress
+  @specifiedBy(
+    url: "https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address"
+  )
 
 type Users {
   docs: [User]
@@ -259,7 +307,10 @@ type UsersCreateDocAccess {
 """
 The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
-scalar JSONObject @specifiedBy(url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf")
+scalar JSONObject
+  @specifiedBy(
+    url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf"
+  )
 
 type UsersReadDocAccess {
   permission: Boolean!
@@ -590,7 +641,10 @@ input Venue_address_operator {
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
-scalar JSON @specifiedBy(url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf")
+scalar JSON
+  @specifiedBy(
+    url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf"
+  )
 
 input Venue_link_operator {
   equals: String
@@ -4195,36 +4249,78 @@ type PayloadPreferencesDeleteAccess {
 
 type Mutation {
   createUser(data: mutationUserInput!, draft: Boolean): User
-  updateUser(id: Int!, autosave: Boolean, data: mutationUserUpdateInput!, draft: Boolean): User
+  updateUser(
+    id: Int!
+    autosave: Boolean
+    data: mutationUserUpdateInput!
+    draft: Boolean
+  ): User
   deleteUser(id: Int!): User
   refreshTokenUser: usersRefreshedUser
   logoutUser: String
   unlockUser(email: String!): Boolean!
   loginUser(email: String!, password: String): usersLoginResult
-  forgotPasswordUser(disableEmail: Boolean, expiration: Int, email: String!): Boolean!
+  forgotPasswordUser(
+    disableEmail: Boolean
+    expiration: Int
+    email: String!
+  ): Boolean!
   resetPasswordUser(password: String, token: String): usersResetPassword
   verifyEmailUser(token: String): Boolean
   createVenue(data: mutationVenueInput!, draft: Boolean): Venue
-  updateVenue(id: Int!, autosave: Boolean, data: mutationVenueUpdateInput!, draft: Boolean): Venue
+  updateVenue(
+    id: Int!
+    autosave: Boolean
+    data: mutationVenueUpdateInput!
+    draft: Boolean
+  ): Venue
   deleteVenue(id: Int!): Venue
   duplicateVenue(id: Int!): Venue
   createAddress(data: mutationAddressInput!, draft: Boolean): Address
-  updateAddress(id: Int!, autosave: Boolean, data: mutationAddressUpdateInput!, draft: Boolean): Address
+  updateAddress(
+    id: Int!
+    autosave: Boolean
+    data: mutationAddressUpdateInput!
+    draft: Boolean
+  ): Address
   deleteAddress(id: Int!): Address
   duplicateAddress(id: Int!): Address
   createMedia(data: mutationMediaInput!, draft: Boolean): Media
-  updateMedia(id: Int!, autosave: Boolean, data: mutationMediaUpdateInput!, draft: Boolean): Media
+  updateMedia(
+    id: Int!
+    autosave: Boolean
+    data: mutationMediaUpdateInput!
+    draft: Boolean
+  ): Media
   deleteMedia(id: Int!): Media
   createAboutUs(data: mutationAboutUsInput!, draft: Boolean): AboutUs
-  updateAboutUs(id: Int!, autosave: Boolean, data: mutationAboutUsUpdateInput!, draft: Boolean): AboutUs
+  updateAboutUs(
+    id: Int!
+    autosave: Boolean
+    data: mutationAboutUsUpdateInput!
+    draft: Boolean
+  ): AboutUs
   deleteAboutUs(id: Int!): AboutUs
   duplicateAboutUs(id: Int!): AboutUs
   createFaq(data: mutationFaqInput!, draft: Boolean): Faq
-  updateFaq(id: Int!, autosave: Boolean, data: mutationFaqUpdateInput!, draft: Boolean): Faq
+  updateFaq(
+    id: Int!
+    autosave: Boolean
+    data: mutationFaqUpdateInput!
+    draft: Boolean
+  ): Faq
   deleteFaq(id: Int!): Faq
   duplicateFaq(id: Int!): Faq
-  createPayloadPreference(data: mutationPayloadPreferenceInput!, draft: Boolean): PayloadPreference
-  updatePayloadPreference(id: Int!, autosave: Boolean, data: mutationPayloadPreferenceUpdateInput!, draft: Boolean): PayloadPreference
+  createPayloadPreference(
+    data: mutationPayloadPreferenceInput!
+    draft: Boolean
+  ): PayloadPreference
+  updatePayloadPreference(
+    id: Int!
+    autosave: Boolean
+    data: mutationPayloadPreferenceUpdateInput!
+    draft: Boolean
+  ): PayloadPreference
   deletePayloadPreference(id: Int!): PayloadPreference
   duplicatePayloadPreference(id: Int!): PayloadPreference
 }

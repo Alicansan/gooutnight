@@ -1,4 +1,3 @@
-
 import { headers as getHeaders } from "next/headers";
 
 import configPromise from "@payload-config";

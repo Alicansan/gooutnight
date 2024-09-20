@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
+import { AboutUs, Media } from "payload-types";
+import { PaginatedDocs } from "payload";
+import Image from "next/image";
 
 export const StickyScroll = ({
   content,
   contentClassName,
 }: {
-  content: {
-    title: string;
-    description: string;
-    content?: React.ReactNode | any;
-  }[];
+
+  content?: PaginatedDocs<AboutUs>;
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
@@ -24,11 +24,11 @@ export const StickyScroll = ({
     container: ref,
     offset: ["start start", "end start"],
   });
-  const cardLength = content.length;
+  const cardLength = content?.docs?.length ?? 0;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const cardsBreakpoints = content.map((_, index) => index / cardLength);
-    const closestBreakpointIndex = cardsBreakpoints.reduce(
+    const cardsBreakpoints = content?.docs?.map((_, index) => index / cardLength);
+    const closestBreakpointIndex = cardsBreakpoints?.reduce(
       (acc, breakpoint, index) => {
         const distance = Math.abs(latest - breakpoint);
         if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
@@ -38,6 +38,9 @@ export const StickyScroll = ({
       },
       0,
     );
+
+    if (!closestBreakpointIndex) return;
+
     setActiveCard(closestBreakpointIndex);
   });
 
@@ -56,6 +59,8 @@ export const StickyScroll = ({
     linearGradients[0],
   );
 
+  const activeImage = content?.docs?.[activeCard].image as Media;
+
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -71,7 +76,7 @@ export const StickyScroll = ({
     >
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
-          {content.map((item, index) => (
+          {content?.docs?.map((item, index) => (
             <div key={item.title + index} className="my-20">
               <motion.h2
                 initial={{
@@ -107,7 +112,18 @@ export const StickyScroll = ({
           contentClassName,
         )}
       >
-        {content[activeCard].content ?? null}
+        {/* {content[activeCard].content ?? null} */}
+        {activeImage?.url && activeImage.width && activeImage.height && (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <Image
+              src={activeImage.url}
+              width={activeImage.width}
+              height={activeImage.height}
+              className="h-full w-full object-cover"
+              alt={activeImage.alt}
+            />
+          </div>
+        )}
       </div>
     </motion.div>
   );

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { LatLngTuple } from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { useEffect, useState } from "react";
@@ -21,8 +21,8 @@ const MapSection = ({ coordinates, venueName, address }: MapSectionProps) => {
 
     useEffect(() => {
       if (map) {
-        map.scrollWheelZoom[scrollWheelZoom ? 'enable' : 'disable']();
-        map.dragging[dragging ? 'enable' : 'disable']();
+        map.scrollWheelZoom[scrollWheelZoom ? "enable" : "disable"]();
+        map.dragging[dragging ? "enable" : "disable"]();
       }
     }, [scrollWheelZoom, dragging, map]);
 
@@ -30,8 +30,8 @@ const MapSection = ({ coordinates, venueName, address }: MapSectionProps) => {
   };
 
   const handleClick = () => {
-    setDragging(prev => !prev);
-    setScrollWheelZoom(prev => !prev);
+    setDragging((prev) => !prev);
+    setScrollWheelZoom((prev) => !prev);
   };
 
   return (
@@ -39,7 +39,7 @@ const MapSection = ({ coordinates, venueName, address }: MapSectionProps) => {
       <MapContainer
         center={coordinates}
         zoom={13}
-        className="relative mx-auto z-10 my-4 w-full flex-1 rounded-lg border-4 border-accent md:h-[55vh] md:max-w-[90vw]"
+        className="relative z-10 mx-auto my-4 w-full flex-1 rounded-lg border-4 border-accent md:h-[55vh] md:max-w-[90vw]"
         dragging={dragging}
       >
         <MapControl />

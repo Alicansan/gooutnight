@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import type { CollectionConfig } from "payload";
 
 const Venue: CollectionConfig = {
@@ -6,7 +7,6 @@ const Venue: CollectionConfig = {
     useAsTitle: "title",
   },
   fields: [
-    
     {
       name: "title",
       type: "text",
@@ -17,7 +17,6 @@ const Venue: CollectionConfig = {
       type: "text",
       required: true,
       unique: true,
-      
     },
     {
       name: "description",
@@ -50,30 +49,25 @@ const Venue: CollectionConfig = {
       label: "Images of your venue that being displayed as slide image ",
       type: "array",
       required: true,
-      fields:[
+      fields: [
         {
-      
-      name: "image",
-      type: "upload",
-      relationTo: "media",
-      required: true,
-    },
-      ]
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+        },
+      ],
     },
     {
       name: "bussinessHours",
       label: "Your open days and their hours",
       type: "array",
-       maxRows: 7,
+      maxRows: 7,
       required: true,
-      fields:[
-        {name: "days",
-          type: "text",
-        },
-        {name: "hours",
-          type: "text",
-        },
-      ]
+      fields: [
+        { name: "days", type: "text" },
+        { name: "hours", type: "text" },
+      ],
     },
     {
       name: "genre",
@@ -82,9 +76,9 @@ const Venue: CollectionConfig = {
       fields: [
         {
           name: "style",
-          type: "text"
-        }
-      ]
+          type: "text",
+        },
+      ],
     },
     {
       name: "dressCode",
@@ -98,7 +92,7 @@ const Venue: CollectionConfig = {
       type: "text",
       required: true,
     },
-    
+
     {
       name: "crowdType",
       label: "Type of Crowd",
@@ -108,47 +102,54 @@ const Venue: CollectionConfig = {
     {
       name: "lgbtq",
       label: "LGBTQ",
-      type: "radio", 
-  required: true,
-  options: [
-    {
-      label: "Welcome",
-      value: "Welcome",
+      type: "radio",
+      required: true,
+      options: [
+        {
+          label: "Welcome",
+          value: "Welcome",
+        },
+        {
+          label: "Not Welcomed",
+          value: "Not Welcomed",
+        },
+      ],
     },
     {
-      label: "Not Welcomed",
-      value: "Not Welcomed",
+      name: "ageRestriction",
+      label: "18-20 age allowed?",
+      type: "radio",
+      required: true,
+      options: [
+        {
+          label: "Yes",
+          value: "Yes",
+        },
+        {
+          label: "No",
+          value: "No",
+        },
+      ],
+    },
+    {
+      name: "bestNights",
+      label: "Best Nights",
+      type: "text",
+      required: true,
+      admin: {
+        placeholder:
+          "Enter days separated by commas (e.g., Tuesday, Saturday and Sunday)",
+      },
     },
   ],
-    },
-   {
-  name: "ageRestriction",
-  label: "18-20 age allowed?",
-  type: "radio", 
-  required: true,
-  options: [
-    {
-      label: "Yes",
-      value: "Yes",
-    },
-    {
-      label: "No",
-      value: "No",
-    },
-  ],
-},
-{
-  name: "bestNights",
-  label: "Best Nights",
-  type: "text",
-  required: true,
-  admin: {
-    placeholder: "Enter days separated by commas (e.g., Tuesday, Saturday and Sunday)",
+  hooks: {
+    afterChange: [
+      (args) => {
+        revalidatePath("/", "layout");
+        revalidatePath("/venues", "layout");
+      },
+    ],
   },
-}
-
-  ],
- 
 };
 
 export { Venue };

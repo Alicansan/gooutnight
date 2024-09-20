@@ -3,27 +3,21 @@ import Image from "next/image";
 import React from "react";
 
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import { AboutUs } from "payload-types";
+import { PaginatedDocs } from "payload";
 
-export function AboutUsOurTeamSection({ aboutUs }: { aboutUs: any }) {
-  const content = aboutUs.docs.map((doc: any) => ({
-    title: doc.title,
-    description: doc.description,
-    content: (
-      <div className="flex h-full w-full items-center justify-center text-white">
-        <Image
-          src={doc.image.url}
-          width={doc.image.width}
-          height={doc.image.height}
-          className="h-full w-full object-cover"
-          alt={doc.image.alt}
-        />
-      </div>
-    ),
-  }));
+export function AboutUsOurTeamSection({
+  aboutUs,
+}: {
+  aboutUs?: PaginatedDocs<AboutUs>;
+}) {
+ 
+
+  if (!aboutUs?.docs?.length) return null;
 
   return (
     <div className="container mt-36">
-      <StickyScroll content={content} />
+      <StickyScroll content={aboutUs} />
     </div>
   );
 }

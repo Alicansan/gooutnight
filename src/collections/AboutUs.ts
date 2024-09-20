@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import type { CollectionConfig } from "payload";
 
 export const AboutUs: CollectionConfig = {
@@ -20,4 +21,11 @@ export const AboutUs: CollectionConfig = {
       required: true,
     },
   ],
+  hooks: {
+    afterChange: [
+      (args) => {
+        revalidatePath("/about-us");
+      },
+    ],
+  },
 };

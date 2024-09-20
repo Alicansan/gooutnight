@@ -1,4 +1,4 @@
-import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-sqlite'
+import { MigrateUpArgs, MigrateDownArgs, sql } from "@payloadcms/db-sqlite";
 
 export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   await payload.db.drizzle.run(sql`CREATE TABLE \`users\` (
@@ -13,7 +13,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	\`login_attempts\` numeric DEFAULT 0,
   	\`lock_until\` text
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`venue_bussiness_hours\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
@@ -22,7 +22,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	\`hours\` text,
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`venue\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`venue_genre\` (
   	\`_order\` integer NOT NULL,
   	\`_parent_id\` integer NOT NULL,
@@ -30,7 +30,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	\`style\` text,
   	FOREIGN KEY (\`_parent_id\`) REFERENCES \`venue\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`venue\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`title\` text NOT NULL,
@@ -51,7 +51,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`address_id\`) REFERENCES \`address\`(\`id\`) ON UPDATE no action ON DELETE set null,
   	FOREIGN KEY (\`image_id\`) REFERENCES \`media\`(\`id\`) ON UPDATE no action ON DELETE set null
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`address\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`address_name\` text NOT NULL,
@@ -60,7 +60,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	\`updated_at\` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL,
   	\`created_at\` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`media\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`alt\` text NOT NULL,
@@ -77,7 +77,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	\`focal_x\` numeric,
   	\`focal_y\` numeric
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`about_us\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`title\` text NOT NULL,
@@ -87,7 +87,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	\`created_at\` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL,
   	FOREIGN KEY (\`image_id\`) REFERENCES \`media\`(\`id\`) ON UPDATE no action ON DELETE set null
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`faqs\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`question\` text NOT NULL,
@@ -95,7 +95,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	\`updated_at\` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL,
   	\`created_at\` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`payload_preferences\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`key\` text,
@@ -103,7 +103,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	\`updated_at\` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL,
   	\`created_at\` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`payload_preferences_rels\` (
   	\`id\` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
   	\`order\` integer,
@@ -113,7 +113,7 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	FOREIGN KEY (\`parent_id\`) REFERENCES \`payload_preferences\`(\`id\`) ON UPDATE no action ON DELETE cascade,
   	FOREIGN KEY (\`users_id\`) REFERENCES \`users\`(\`id\`) ON UPDATE no action ON DELETE cascade
   );
-  `)
+  `);
   await payload.db.drizzle.run(sql`CREATE TABLE \`payload_migrations\` (
   	\`id\` integer PRIMARY KEY NOT NULL,
   	\`name\` text,
@@ -121,38 +121,76 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   	\`updated_at\` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL,
   	\`created_at\` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL
   );
-  `)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`users_created_at_idx\` ON \`users\` (\`created_at\`);`)
-  await payload.db.drizzle.run(sql`CREATE UNIQUE INDEX \`users_email_idx\` ON \`users\` (\`email\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`venue_bussiness_hours_order_idx\` ON \`venue_bussiness_hours\` (\`_order\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`venue_bussiness_hours_parent_id_idx\` ON \`venue_bussiness_hours\` (\`_parent_id\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`venue_genre_order_idx\` ON \`venue_genre\` (\`_order\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`venue_genre_parent_id_idx\` ON \`venue_genre\` (\`_parent_id\`);`)
-  await payload.db.drizzle.run(sql`CREATE UNIQUE INDEX \`venue_page_link_idx\` ON \`venue\` (\`page_link\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`venue_created_at_idx\` ON \`venue\` (\`created_at\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`address_created_at_idx\` ON \`address\` (\`created_at\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`media_created_at_idx\` ON \`media\` (\`created_at\`);`)
-  await payload.db.drizzle.run(sql`CREATE UNIQUE INDEX \`media_filename_idx\` ON \`media\` (\`filename\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`about_us_created_at_idx\` ON \`about_us\` (\`created_at\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`faqs_created_at_idx\` ON \`faqs\` (\`created_at\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`payload_preferences_key_idx\` ON \`payload_preferences\` (\`key\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`payload_preferences_created_at_idx\` ON \`payload_preferences\` (\`created_at\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`payload_preferences_rels_order_idx\` ON \`payload_preferences_rels\` (\`order\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`payload_preferences_rels_parent_idx\` ON \`payload_preferences_rels\` (\`parent_id\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`payload_preferences_rels_path_idx\` ON \`payload_preferences_rels\` (\`path\`);`)
-  await payload.db.drizzle.run(sql`CREATE INDEX \`payload_migrations_created_at_idx\` ON \`payload_migrations\` (\`created_at\`);`)
+  `);
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`users_created_at_idx\` ON \`users\` (\`created_at\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE UNIQUE INDEX \`users_email_idx\` ON \`users\` (\`email\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`venue_bussiness_hours_order_idx\` ON \`venue_bussiness_hours\` (\`_order\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`venue_bussiness_hours_parent_id_idx\` ON \`venue_bussiness_hours\` (\`_parent_id\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`venue_genre_order_idx\` ON \`venue_genre\` (\`_order\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`venue_genre_parent_id_idx\` ON \`venue_genre\` (\`_parent_id\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE UNIQUE INDEX \`venue_page_link_idx\` ON \`venue\` (\`page_link\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`venue_created_at_idx\` ON \`venue\` (\`created_at\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`address_created_at_idx\` ON \`address\` (\`created_at\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`media_created_at_idx\` ON \`media\` (\`created_at\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE UNIQUE INDEX \`media_filename_idx\` ON \`media\` (\`filename\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`about_us_created_at_idx\` ON \`about_us\` (\`created_at\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`faqs_created_at_idx\` ON \`faqs\` (\`created_at\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`payload_preferences_key_idx\` ON \`payload_preferences\` (\`key\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`payload_preferences_created_at_idx\` ON \`payload_preferences\` (\`created_at\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`payload_preferences_rels_order_idx\` ON \`payload_preferences_rels\` (\`order\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`payload_preferences_rels_parent_idx\` ON \`payload_preferences_rels\` (\`parent_id\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`payload_preferences_rels_path_idx\` ON \`payload_preferences_rels\` (\`path\`);`,
+  );
+  await payload.db.drizzle.run(
+    sql`CREATE INDEX \`payload_migrations_created_at_idx\` ON \`payload_migrations\` (\`created_at\`);`,
+  );
 }
 
 export async function down({ payload, req }: MigrateDownArgs): Promise<void> {
-  await payload.db.drizzle.run(sql`DROP TABLE \`users\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`venue_bussiness_hours\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`venue_genre\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`venue\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`address\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`media\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`about_us\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`faqs\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`payload_preferences\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`payload_preferences_rels\`;`)
-  await payload.db.drizzle.run(sql`DROP TABLE \`payload_migrations\`;`)
+  await payload.db.drizzle.run(sql`DROP TABLE \`users\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`venue_bussiness_hours\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`venue_genre\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`venue\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`address\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`media\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`about_us\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`faqs\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`payload_preferences\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`payload_preferences_rels\`;`);
+  await payload.db.drizzle.run(sql`DROP TABLE \`payload_migrations\`;`);
 }
