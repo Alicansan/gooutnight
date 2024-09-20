@@ -12,10 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-import { VenuePhoto } from "@/constants/venuephotos";
-
 const VenueSlider = ({ venuePhotos, className }: any) => {
-  console.log("#######", venuePhotos[0]);
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true }),
   );
