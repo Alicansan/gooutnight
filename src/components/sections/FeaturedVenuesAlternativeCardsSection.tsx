@@ -24,7 +24,7 @@ export function FeaturedVenuesAlternativeCardsSection({
               alt={venue.image.alt}
               height={venue.image.height}
               width={venue.image.width}
-              className="mx-auto h-[265px] max-h-[auto] max-w-[auto] rounded-t-[23px] object-none"
+              className="mx-auto h-[265px] max-h-[auto] max-w-[auto] rounded-t-[23px] object-contain"
             />
             <hr className="border-b-2 border-yellow-800" />
             <div className="flex flex-col items-center">

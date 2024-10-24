@@ -10,7 +10,7 @@ export function HeroSection() {
         className="flex h-full w-full flex-col items-center justify-center px-2 py-4 md:px-10"
       >
         <h2 className="text-center text-2xl font-bold text-foreground md:text-6xl">
-          Create Your Nite
+          Go Blend the Night
         </h2>
         <p className="mt-6 max-w-xl text-center text-sm text-foreground md:text-2xl">
           We Will Provide The Right Information For Your Best Night Out!
