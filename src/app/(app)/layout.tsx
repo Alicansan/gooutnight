@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Mulish } from "next/font/google";
-
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 import Navbar from "@/components/navbar/Navbar";
@@ -30,6 +30,7 @@ export default function RootLayout({
       <body
         className={`${mulish.variable} ${inter.variable} max-w-screen min-h-screen w-full overflow-auto overflow-x-hidden bg-background text-foreground antialiased`}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -38,6 +39,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+
           <Footer />
         </ThemeProvider>
       </body>
