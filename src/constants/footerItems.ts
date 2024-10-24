@@ -15,7 +15,7 @@ export const socialMediaLinks = [
   {
     name: "Twitter",
     icon: FaTwitter,
-    link: "https://twitter.com/nitelifenav",
+    link: "https://twitter.com/gooutnight",
   },
   {
     name: "Instagram",
@@ -45,7 +45,7 @@ export const socialMediaLinks = [
 //   },
 //   {
 //     name: "Angel List",
-//     link: "https://angel.co/nitelifenav",
+//     link: "https://angel.co/gooutnight",
 //   },
 //   {
 //     name: "Contact",

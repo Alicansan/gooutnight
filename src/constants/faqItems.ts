@@ -2,14 +2,14 @@ export const faqItems = [
   {
     value: "item-1",
     question:
-      "What type of information can I find about nightlife venues on NiteLifeNav?",
+      "What type of information can I find about nightlife venues on GoOutNight?",
     answer:
-      "NiteLifeNav provides real-time information on clubs, bars, and lounges, including venue hours, wait severity, cover charge, security presence, crowd type, dress code, and music genre. You can also find details about venues that allow 18-20-year-olds and upcoming performances by DJs or artists.",
+      "GoOutNight provides real-time information on clubs, bars, and lounges, including venue hours, wait severity, cover charge, security presence, crowd type, dress code, and music genre. You can also find details about venues that allow 18-20-year-olds and upcoming performances by DJs or artists.",
   },
   {
     value: "item-2",
     question:
-      "How does NiteLifeNav ensure the accuracy of the venue information?",
+      "How does GoOutNight ensure the accuracy of the venue information?",
     answer:
       "We partner directly with venues to ensure that the information we provide is up-to-date and accurate. Our team continuously updates our data to reflect any changes in venue operations or special events.",
   },
@@ -17,7 +17,7 @@ export const faqItems = [
     value: "item-3",
     question: "Can I find out which venues have a dress code before I go?",
     answer:
-      "Yes, NiteLifeNav includes dress code information for each venue listed on our platform, allowing you to prepare accordingly before heading out.",
+      "Yes, GoOutNight includes dress code information for each venue listed on our platform, allowing you to prepare accordingly before heading out.",
   },
   {
     value: "item-4",
@@ -28,9 +28,9 @@ export const faqItems = [
   },
   {
     value: "item-5",
-    question: "How can NiteLifeNav help me if I'm under 21?",
+    question: "How can GoOutNight help me if I'm under 21?",
     answer:
-      "NiteLifeNav provides a special listing for venues that welcome consumers aged 18-20. This feature helps younger adults find suitable places to enjoy nightlife responsibly.",
+      "GoOutNight provides a special listing for venues that welcome consumers aged 18-20. This feature helps younger adults find suitable places to enjoy nightlife responsibly.",
   },
   {
     value: "item-6",

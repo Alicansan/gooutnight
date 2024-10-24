@@ -29,7 +29,7 @@ const NavBarLinks = ({ onClick }: { onClick: () => void }) => (
       About Us
     </Link>
     <Link
-      href="https://twitter.com/nitelifenav"
+      href="https://twitter.com/gooutnight"
       passHref
       className="px-4 py-2 text-foreground transition-all hover:text-blue-500"
       target="_blank"
@@ -39,7 +39,7 @@ const NavBarLinks = ({ onClick }: { onClick: () => void }) => (
       Twitter
     </Link>
     <Link
-      href="https://angel.co/nitelifenav"
+      href="https://angel.co/gooutnight"
       passHref
       className="px-4 py-2 text-foreground transition-all hover:text-blue-500"
       target="_blank"
@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
       />
       <div className="container relative mx-auto flex items-center justify-between">
         <Link href="/">
-          <div className="text-xl font-bold text-foreground">NITELIFENAV</div>
+          <div className="text-xl font-bold text-foreground">GOOUTNIGHT</div>
         </Link>
         <div className="absolute left-1/2 hidden -translate-x-1/2 justify-center space-x-4 lg:flex">
           <NavBarLinks onClick={closeMenu} />

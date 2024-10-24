@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { faqItems } from "@/constants/faqItems";
 
 const FaqPage = async () => {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -14,6 +15,8 @@ const FaqPage = async () => {
   const faqs = await payload.find({
     collection: "faqs",
   });
+
+  const fags = faqItems;
 
   return (
     <>
@@ -23,10 +26,10 @@ const FaqPage = async () => {
             Frequently Asked Questions
           </h1>
           <Accordion type="single" className="mx-auto">
-            {faqs?.docs?.map((item) => (
+            {faqItems.map((item) => (
               <AccordionItem
-                key={item.id}
-                value={item.id.toString()}
+                key={item.value}
+                value={item.value.toString()}
                 className="border-none"
               >
                 <AccordionTrigger className="hover:text-whitehover:!no-underline text-start font-bold text-indigo-300 hover:text-black dark:hover:text-white sm:my-2 sm:text-2xl">

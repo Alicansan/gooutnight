@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <Link href="/">
               <div className="text-xl font-bold text-foreground">
-                NITELIFENAV
+                GOOUTNIGHT
               </div>
             </Link>
             <p className="mx-2 mt-6 text-center text-base leading-7 text-foreground sm:max-w-md">
@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="text-white-400 container my-6 flex items-center justify-start max-sm:flex-col sm:items-start">
           <div className="flex flex-1 cursor-pointer flex-col items-center justify-start gap-2 md:flex-row">
             <p className="mb-6 text-center text-sm">
-              NITELIFENAV Copyright © 2024. All rights reserved.
+              GOOUTNIGHT Copyright © 2024. All rights reserved.
             </p>
           </div>
           <Link href="/terms-and-conditions">

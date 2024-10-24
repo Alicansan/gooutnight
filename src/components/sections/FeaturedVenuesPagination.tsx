@@ -23,7 +23,7 @@ const venues = [
     alt: "example1",
     name: "The Bitter End",
     address: "441 Clement St San Francisco, CA 94118",
-    link: "https://nitelifenav.com/listings/the-bitter-end/",
+    link: "https://.com/listings/the-bitter-end/",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const venues = [
     alt: "example2",
     name: "Monkey Bar",
     address: "26 Wall St Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/monkey-bar/",
+    link: "https://.com/listings/monkey-bar/",
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const venues = [
     alt: "example3",
     name: "Sideshow",
     address: "15 N. Orange Ave Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/sideshow/",
+    link: "https://.com/listings/sideshow/",
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const venues = [
     alt: "example4",
     name: "Waitiki",
     address: "26 Wall St Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/waitiki/",
+    link: "https://.com/listings/waitiki/",
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ const venues = [
     alt: "example5",
     name: "Shine",
     address: "25 Wall St Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/shine/",
+    link: "https://.com/listings/shine/",
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ const venues = [
     alt: "example6",
     name: "Hen House",
     address: "11 Wall St Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/hen-house/",
+    link: "https://.com/listings/hen-house/",
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ const venues = [
     alt: "example1",
     name: "The Bitter End",
     address: "441 Clement St San Francisco, CA 94118",
-    link: "https://nitelifenav.com/listings/the-bitter-end/",
+    link: "https://.com/listings/the-bitter-end/",
   },
   {
     id: 8,
@@ -79,7 +79,7 @@ const venues = [
     alt: "example2",
     name: "Monkey Bar",
     address: "26 Wall St Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/monkey-bar/",
+    link: "https://.com/listings/monkey-bar/",
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ const venues = [
     alt: "example3",
     name: "Sideshow",
     address: "15 N. Orange Ave Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/sideshow/",
+    link: "https://.com/listings/sideshow/",
   },
   {
     id: 10,
@@ -95,7 +95,7 @@ const venues = [
     alt: "example4",
     name: "Waitiki",
     address: "26 Wall St Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/waitiki/",
+    link: "https://.com/listings/waitiki/",
   },
   {
     id: 11,
@@ -103,7 +103,7 @@ const venues = [
     alt: "example5",
     name: "Shine",
     address: "25 Wall St Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/shine/",
+    link: "https://.com/listings/shine/",
   },
   {
     id: 12,
@@ -111,7 +111,7 @@ const venues = [
     alt: "example6",
     name: "Hen House",
     address: "11 Wall St Orlando, FL 32801",
-    link: "https://nitelifenav.com/listings/hen-house/",
+    link: "https://.com/listings/hen-house/",
   },
 ];
 const itemsPerPage = 4;

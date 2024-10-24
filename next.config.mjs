@@ -19,7 +19,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "nitelifenav.com",
+        hostname: "gooutnight.com",
         port: "",
         pathname: "/**",
       },
