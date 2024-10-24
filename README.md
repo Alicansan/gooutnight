@@ -11,3 +11,5 @@ pnpm payload migrate:create <name>
 ```bash
 pnpm payload migrate
 ```
+
+test
