@@ -30,7 +30,6 @@ export default function RootLayout({
       <body
         className={`${mulish.variable} ${inter.variable} max-w-screen min-h-screen w-full overflow-auto overflow-x-hidden bg-background text-foreground antialiased`}
       >
-        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -39,7 +38,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
-
+          <Analytics />
           <Footer />
         </ThemeProvider>
       </body>
